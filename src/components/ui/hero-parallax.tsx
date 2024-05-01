@@ -104,11 +104,11 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <>
-      <img
-        className="w-28 absolute top-10 left-1/2 -translate-x-1/2 z-10"
-        src="/we.svg"
-        alt="Logo"
-      />
+      <div className="absolute top-0  z-10 w-full bg-transparent py-5 flex items-center justify-center ">
+        <div className="max-w-7xl w-full bg-transparent px-4 py-5">
+          <img className="w-28 " src="/we.svg" alt="Logo" />
+        </div>
+      </div>
       <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
         <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
           The Ultimate <br /> development studio
