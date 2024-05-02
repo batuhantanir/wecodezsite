@@ -13,24 +13,25 @@ function Hambuger({
   isOpen,
   setIsOpen,
   className,
-  spanClass = "bg-black dark:bg-white",
+  spanClass,
   ...props
 }: HambugerProps) {
   return (
-    <button
+    <motion.button
       className={cn(
-        "md:hidden cursor-pointer  active:scale-90 transition-all duration-300 z-20  flex flex-col justify-center items-center gap-1 w-10 h-10 rounded-md",
+        "md:hidden cursor-pointer  active:scale-90 transition-all duration-300 z-30  flex flex-col justify-center items-center gap-1 w-10 h-10 rounded-md",
         className
       )}
       type="button"
       onClick={() => {
         setIsOpen(!isOpen);
       }}
+      initial={{ x: 100 }}
+      animate={{ x: 0 }}
       {...props}
     >
       <motion.span
-        className={cn(" block w-6 h-0.5", spanClass)}
-        initial={{ rotate: 0 }}
+        className={cn(" block w-6 h-0.5 bg-black dark:bg-white", spanClass)}
         animate={{
           rotate: isOpen ? 45 : 0,
           translateY: isOpen ? 7.5 : 0,
@@ -38,20 +39,18 @@ function Hambuger({
         }}
       ></motion.span>
       <motion.span
-        className={cn(" block w-6 h-0.5", spanClass)}
-        initial={{ opacity: 1 }}
+        className={cn(" block w-6 h-0.5 bg-black dark:bg-white", spanClass)}
         animate={{ opacity: isOpen ? 0 : 1, x: isOpen ? 20 : 0 }}
       ></motion.span>
       <motion.span
-        className={cn(" block w-6 h-0.5", spanClass)}
-        initial={{ rotate: 0 }}
+        className={cn(" block w-6 h-0.5 bg-black dark:bg-white", spanClass)}
         animate={{
           rotate: isOpen ? -45 : 0,
           translateY: isOpen ? -4.5 : 0,
           height: isOpen ? 2.5 : 2,
         }}
       ></motion.span>
-    </button>
+    </motion.button>
   );
 }
 
