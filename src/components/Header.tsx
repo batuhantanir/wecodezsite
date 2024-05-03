@@ -13,6 +13,20 @@ function HeaderNav() {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery(769);
   const pathname = usePathname();
+  const navItems = [
+    {
+      title: "Home",
+      link: "/",
+    },
+    {
+      title: "About",
+      link: "/about",
+    },
+    {
+      title: "Contact",
+      link: "/contact",
+    },
+  ];
 
   const container = {
     open: {
@@ -48,13 +62,14 @@ function HeaderNav() {
     <div className="absolute top-0 md:left-1/2 md:-translate-x-1/2  z-30 w-full bg-transparent py-5   overflow-x-hidden h-screen md:h-fit md:max-w-7xl">
       <div className="flex items-center justify-between">
         <div className="max-w-7xl w-full bg-transparent px-8 md:px-4 py-5 flex justify-between items-center ">
-          <motion.img
+          <motion.a
+            href="/"
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
-            className="w-28 "
-            src="/we.svg"
-            alt="Logo"
-          />
+            className="hover:cursor-pointer"
+          >
+            <img className="w-28 " src="/we.svg" alt="Logo" />
+          </motion.a>
           <Hambuger isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
         <div>
@@ -106,20 +121,5 @@ function HeaderNav() {
     </div>
   );
 }
-
-const navItems = [
-  {
-    title: "Home",
-    link: "/",
-  },
-  {
-    title: "About",
-    link: "/about",
-  },
-  {
-    title: "Contact",
-    link: "/contact",
-  },
-];
 
 export default HeaderNav;
