@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-select": "^2.0.0",
+    "@types/tailwindcss": "^3.1.0",
     "class-variance-authority": "^0.7.0",
     "@hookform/resolvers": "^3.3.4",
     "@types/tailwindcss": "^3.1.0",
