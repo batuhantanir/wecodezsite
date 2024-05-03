@@ -6,6 +6,7 @@ function Contact() {
   return (
     <>
       <Form />
+      <h1 className="sr-only">WeCodez Contact</h1>
     </>
   );
 }

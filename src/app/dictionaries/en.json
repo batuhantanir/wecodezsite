@@ -3,5 +3,16 @@
     "headerTitleTwo": "development studio",
     "headerDescription": "We build beautiful products with the latest technologies and frameworks. We are a team of passionate developers and designers that love to build amazing products.",
     "languageOne": "English",
-    "languageTwo": "Turkish"
+    "languageTwo": "Turkish",
+    "contactTitle": "Contact Us",
+    "contactDescription": "We are always here to help you. If you have any questions or need help, feel free to contact us.",
+    "contactSubject": "Subject",
+    "contactName": "Name",
+    "contactEmail": "Email",
+    "contactMessage": "Message",
+    "contactButton": "Submit",
+    "contactSubjectPH": "Enter the subject...",
+    "contactNamePH": "Enter your name...",
+    "contactEmailPH": "Enter your email address...",
+    "contactMessagePH": "Enter your message..."
 }

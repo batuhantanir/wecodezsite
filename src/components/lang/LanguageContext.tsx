@@ -1,6 +1,7 @@
 "use client";
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { getDictionary } from "@/app/getLocal";
+import { json } from "stream/consumers";
 
 export type Language = "en" | "tr";
 
