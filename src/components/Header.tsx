@@ -7,6 +7,7 @@ import { useMediaQuery } from "@/utils/useMediaQuery";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeSwitch from "./Theme/ThemeSwitch";
+import LangSwitch from "@/components/lang/LangSwitch";
 
 function HeaderNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -74,6 +75,7 @@ function HeaderNav() {
                 </motion.a>
               ))}
               <ThemeSwitch />
+              <LangSwitch />
             </motion.nav>
           ) : (
             <motion.nav
@@ -93,7 +95,8 @@ function HeaderNav() {
                   {item.title}
                 </Link>
               ))}
-              <div className="ml-5 w-fit">
+              <div className="ml-5 flex gap-4 w-fit">
+                <LangSwitch />
                 <ThemeSwitch />
               </div>
             </motion.nav>

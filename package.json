@@ -9,9 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-select": "^2.0.0",
-    "class-variance-authority": "^0.7.0",
     "@types/tailwindcss": "^3.1.0",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.1.7",
     "lucide-react": "^0.376.0",
