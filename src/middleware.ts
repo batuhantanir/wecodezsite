@@ -1,10 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const locales = ["en", "tr"];
-const defaultLocale = "en";
+let defaultLocale = "en";
 
 export function middleware(request: NextRequest) {
   const country = request.geo?.country?.toLowerCase() || "en";
+
+  if (locales.includes(country)) {
+    defaultLocale = country;
+  }
 
   const requestHeaders = new Headers(request.headers);
   const response = NextResponse.next({
