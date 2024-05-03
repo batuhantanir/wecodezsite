@@ -44,57 +44,61 @@ function HeaderNav() {
   }, [isOpen]);
 
   return (
-    <div className="absolute top-0  z-10 w-full bg-transparent py-5 flex items-center justify-center  overflow-x-hidden">
-      <div className="max-w-7xl w-full bg-transparent px-8 md:px-4 py-5 flex justify-between items-center ">
-        <motion.img
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="w-28 "
-          src="/we.svg"
-          alt="Logo"
-        />
-        {isMobile ? (
-          <motion.nav
-            className="absolute order-3 px-5 md:order-2 flex flex-col items-start gap-4 top-0 right-0 bg-white text-slate-950 dark:text-white dark:bg-slate-950 w-full pt-24 z-20  h-dvh"
-            variants={container}
-            animate={isOpen ? "open" : "closed"}
-          >
-            {navItems.map((item) => (
-              <motion.a
-                href={item.link}
-                key={item.title}
-                variants={child}
-                className=" text-lg md:text-xl ml-4 font-medium transition-colors duration-300"
-              >
-                {item.title}
-              </motion.a>
-            ))}
-            <ThemeSwitch />
-          </motion.nav>
-        ) : (
-          <motion.nav
-            initial={{ opacity: 0, x: 100 }}
+    <div className="absolute top-0 md:left-1/2 md:-translate-x-1/2  z-10 w-full bg-transparent py-5   overflow-x-hidden h-screen md:h-fit md:max-w-7xl">
+      <div className="flex items-center justify-between">
+        <div className="max-w-7xl w-full bg-transparent px-8 md:px-4 py-5 flex justify-between items-center ">
+          <motion.img
+            initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
-            className="hidden md:flex items-center gap-4 text-slate-950 dark:text-white"
-          >
-            {navItems.map((item) => (
-              <Link
-                href={item.link}
-                key={item.title}
-                className={cn(
-                  " text-xl ml-4 font-semibold transition-all duration-300",
-                  pathname == item.link && "opacity-[.80] "
-                )}
-              >
-                {item.title}
-              </Link>
-            ))}
-            <div className="ml-5 w-fit">
+            className="w-28 "
+            src="/we.svg"
+            alt="Logo"
+          />
+          <Hambuger isOpen={isOpen} setIsOpen={setIsOpen} />
+        </div>
+        <div>
+          {isMobile ? (
+            <motion.nav
+              className="absolute order-3 px-5 md:order-2 flex flex-col items-start gap-4 top-0 right-0 bg-white text-slate-950 dark:text-white dark:bg-slate-950 w-full pt-24 z-20  h-dvh"
+              variants={container}
+              animate={isOpen ? "open" : "closed"}
+            >
+              {navItems.map((item) => (
+                <motion.a
+                  href={item.link}
+                  key={item.title}
+                  variants={child}
+                  className=" text-lg md:text-xl ml-4 font-medium transition-colors duration-300"
+                >
+                  {item.title}
+                </motion.a>
+              ))}
               <ThemeSwitch />
-            </div>
-          </motion.nav>
-        )}
-        <Hambuger isOpen={isOpen} setIsOpen={setIsOpen} />
+            </motion.nav>
+          ) : (
+            <motion.nav
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="hidden md:flex items-center gap-4 text-slate-950 dark:text-white"
+            >
+              {navItems.map((item) => (
+                <Link
+                  href={item.link}
+                  key={item.title}
+                  className={cn(
+                    " text-xl ml-4 font-semibold transition-all duration-300",
+                    pathname == item.link && "opacity-[.80] "
+                  )}
+                >
+                  {item.title}
+                </Link>
+              ))}
+              <div className="ml-5 w-fit">
+                <ThemeSwitch />
+              </div>
+            </motion.nav>
+          )}
+        </div>
       </div>
     </div>
   );

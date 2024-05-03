@@ -38,13 +38,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} relative`}>
+      <body className={`${inter.className} relative overflow-x-hidden`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-          className="bg-white dark:bg-slate-950 text-black dark:text-white w-full min-h-screen relative"
+          className="bg-white dark:bg-slate-950 text-black dark:text-white w-full min-h-screen relative  overflow-x-hidden"
         >
           <HeaderNav />
           {children}
