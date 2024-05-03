@@ -5,8 +5,9 @@ let defaultLocale = "en";
 
 export function middleware(request: NextRequest) {
   const country = request.geo?.country?.toLowerCase() || "en";
+  request.cookies.get("NEXT_LOCALE")?.value || defaultLocale;
 
-  if (locales.includes(country)) {
+  if (locales.includes(country) && !request.cookies.get("NEXT_LOCALE")?.value) {
     defaultLocale = country;
   }
 
