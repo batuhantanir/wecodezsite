@@ -4,6 +4,7 @@ import "./globals.css";
 import ThemeProvider from "@/components/Theme/ThemeProvider";
 import HeaderNav from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { LanguageProvider } from "@/components/lang/LanguageContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,14 +42,16 @@ export default function RootLayout({
       <body className={`${inter.className} relative overflow-x-hidden`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
           className="bg-white dark:bg-slate-950 text-black dark:text-white w-full min-h-screen relative  overflow-x-hidden"
         >
-          <HeaderNav />
-          {children}
-          <Footer />
+          <LanguageProvider>
+            <HeaderNav />
+            {children}
+            <Footer />
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>
