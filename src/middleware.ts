@@ -4,6 +4,8 @@ const locales = ["en", "tr"];
 const defaultLocale = "en";
 
 export function middleware(request: NextRequest) {
+  const country = request.geo?.country?.toLowerCase() || "en";
+
   const requestHeaders = new Headers(request.headers);
   const response = NextResponse.next({
     request: {
