@@ -20,7 +20,7 @@ function LangSwitch() {
         handleSwitcherClick(value as Language);
       }}
     >
-      <SelectTrigger className="absolute top-5 right-5 w-fit z-[999]">
+      <SelectTrigger className="absolute top-100 right-50 w-fit z-[999]">
         <SelectValue />
       </SelectTrigger>
       <SelectContent>
