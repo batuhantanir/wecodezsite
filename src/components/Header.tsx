@@ -44,7 +44,7 @@ function HeaderNav() {
   }, [isOpen]);
 
   return (
-    <div className="absolute top-0 md:left-1/2 md:-translate-x-1/2  z-10 w-full bg-transparent py-5   overflow-x-hidden h-screen md:h-fit md:max-w-7xl">
+    <div className="absolute top-0 md:left-1/2 md:-translate-x-1/2  z-30 w-full bg-transparent py-5   overflow-x-hidden h-screen md:h-fit md:max-w-7xl">
       <div className="flex items-center justify-between">
         <div className="max-w-7xl w-full bg-transparent px-8 md:px-4 py-5 flex justify-between items-center ">
           <motion.img
