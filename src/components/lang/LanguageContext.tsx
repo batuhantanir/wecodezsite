@@ -5,9 +5,7 @@ import { json } from "stream/consumers";
 
 export type Language = "en" | "tr";
 
-interface Dictionary {
-  [key: string]: string;
-}
+type Dictionary = typeof import("@/app/dictionaries/en.json");
 
 interface LanguageContextType {
   lang: Language;
@@ -31,7 +29,7 @@ export const LanguageProvider = ({
   children: React.ReactNode;
 }) => {
   const [lang, setLang] = useState<Language>("en");
-  const [intl, setIntl] = useState<Dictionary>({});
+  const [intl, setIntl] = useState<Dictionary>({} as Dictionary);
 
   useEffect(() => {
     const fetchIntlData = async () => {

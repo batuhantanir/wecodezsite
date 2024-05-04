@@ -5,6 +5,7 @@ import ThemeProvider from "@/components/Theme/ThemeProvider";
 import HeaderNav from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { LanguageProvider } from "@/components/lang/LanguageContext";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

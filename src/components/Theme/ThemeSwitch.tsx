@@ -22,7 +22,7 @@ function ThemeSwitch({ className }: { className?: string }) {
   if (!mounted) return null;
 
   return (
-    <button className={className} onClick={changeTheme}>
+    <button className={className} onClick={changeTheme} name="theme switch">
       {resolvedTheme === "dark" ? (
         <TbMoon size={20} className="active:scale-95" />
       ) : (

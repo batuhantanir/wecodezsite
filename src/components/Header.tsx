@@ -8,22 +8,25 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeSwitch from "./Theme/ThemeSwitch";
 import LangSwitch from "@/components/lang/LangSwitch";
+import { useLanguage } from "./lang/LanguageContext";
 
 function HeaderNav() {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery(769);
   const pathname = usePathname();
+  const { intl } = useLanguage();
+
   const navItems = [
     {
-      title: "Home",
+      title: intl.navbarHome,
       link: "/",
     },
     {
-      title: "About",
+      title: intl.navbarAbout,
       link: "/about",
     },
     {
-      title: "Contact",
+      title: intl.navbarContact,
       link: "/contact",
     },
   ];
@@ -68,7 +71,7 @@ function HeaderNav() {
             animate={{ opacity: 1, x: 0 }}
             className="hover:cursor-pointer"
           >
-            <img className="w-28 " src="/we.svg" alt="Logo" />
+            <img className="w-28 h-fit" src="/we.svg" alt="Logo" />
           </motion.a>
           <Hambuger isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
@@ -79,10 +82,10 @@ function HeaderNav() {
               variants={container}
               animate={isOpen ? "open" : "closed"}
             >
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
                 <motion.a
                   href={item.link}
-                  key={item.title}
+                  key={index}
                   variants={child}
                   className=" text-lg md:text-xl ml-4 font-medium transition-colors duration-300"
                 >
@@ -98,10 +101,10 @@ function HeaderNav() {
               animate={{ opacity: 1, x: 0 }}
               className="hidden md:flex items-center gap-4 text-slate-950 dark:text-white"
             >
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
                 <Link
                   href={item.link}
-                  key={item.title}
+                  key={index}
                   className={cn(
                     " text-xl ml-4 font-semibold transition-all duration-300",
                     pathname == item.link && "opacity-[.80] "

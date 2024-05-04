@@ -13,7 +13,7 @@ function LangSwitch() {
 
   return (
     <Popover>
-      <PopoverTrigger className="hover:dark:bg-white/20 p-1.5 hover:dark:text-white rounded-md">
+      <PopoverTrigger className="hover:dark:bg-white/20 p-1.5 hover:dark:text-white rounded-md" name="translate">
         <IoLanguage className="text-xl" />
       </PopoverTrigger>
       <PopoverContent className="flex flex-col items-start space-y-3 dark:bg-[#121212] outline-none w-fit border-none  dark:text-neutral-300 p-4 px-6">
