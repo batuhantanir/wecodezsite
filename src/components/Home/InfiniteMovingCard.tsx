@@ -2,8 +2,40 @@
 
 import React, { useEffect, useState } from "react";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
+import { useLanguage } from "../lang/LanguageContext";
 
 export function InfiniteMovingCard() {
+  const { intl } = useLanguage();
+  const testimonials = [
+    {
+      quote: intl.commentOneQuote,
+      name: intl.commentOneAuthor,
+      title: intl.commentOneTitle,
+    },
+    {
+      quote: intl.commentTwoQuote,
+      name: intl.commentTwoAuthor,
+      title: intl.commentTwoTitle,
+    },
+    {
+      quote: intl.commentThreeQuote,
+      name: intl.commentThreeAuthor,
+      title: intl.commentThreeTitle,
+    },
+    {
+      quote: intl.commentFourQuote,
+      name: intl.commentFourAuthor,
+      title: intl.commentFourTitle,
+    },
+    {
+      quote: intl.commentFiveQuote,
+      name: intl.commentFiveAuthor,
+      title: intl.commentFiveTitle,
+    },
+  ];
+  if (testimonials[0].quote === "" || testimonials[0].quote === undefined)
+    return null;
+
   return (
     <div className="py-32 rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       <InfiniteMovingCards
@@ -14,35 +46,3 @@ export function InfiniteMovingCard() {
     </div>
   );
 }
-
-const testimonials = [
-  {
-    quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
-  },
-  {
-    quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
-  },
-  {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
-  },
-  {
-    quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
-  },
-  {
-    quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
-  },
-];

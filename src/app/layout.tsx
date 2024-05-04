@@ -49,7 +49,7 @@ export default function RootLayout({
         >
           <LanguageProvider>
             <HeaderNav />
-            {children}
+            <main className="min-h-[calc(100vh_-_400px)]">{children}</main>
             <Footer />
           </LanguageProvider>
         </ThemeProvider>

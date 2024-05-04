@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Hambuger from "./ui/Hambuger";
 import { cn } from "@/utils/cn";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useMediaQuery } from "@/utils/useMediaQuery";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -37,19 +37,22 @@ function HeaderNav() {
       x: 0,
       transition: {
         staggerChildren: 0.15,
+        delayChildren: 0.2,
         when: "beforeChildren",
         type: "tween",
         stiffness: 300,
       },
     },
     closed: {
-      opacity: 0,
+      opacity: 1,
       x: "100%",
     },
   };
 
   const child = {
-    open: { opacity: 1 },
+    open: {
+      opacity: 1,
+    },
     closed: { opacity: 0 },
   };
 
@@ -75,7 +78,7 @@ function HeaderNav() {
           </motion.a>
           <Hambuger isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
-        <div>
+        <>
           {isMobile ? (
             <motion.nav
               className="absolute order-3 px-5 md:order-2 flex flex-col items-start gap-4 top-0 right-0 bg-white text-slate-950 dark:text-white dark:bg-slate-950 w-full pt-24 z-20  h-dvh"
@@ -92,8 +95,10 @@ function HeaderNav() {
                   {item.title}
                 </motion.a>
               ))}
-              <ThemeSwitch />
-              <LangSwitch />
+              <motion.div variants={child} className=" space-x-2 ml-4">
+                <ThemeSwitch />
+                <LangSwitch />
+              </motion.div>
             </motion.nav>
           ) : (
             <motion.nav
@@ -119,7 +124,7 @@ function HeaderNav() {
               </div>
             </motion.nav>
           )}
-        </div>
+        </>
       </div>
     </div>
   );

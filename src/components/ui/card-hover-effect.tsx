@@ -11,7 +11,6 @@ export const HoverEffect = ({
   items: {
     title: string;
     description: string;
-    link: string;
     icon?: IconType;
   }[];
   className?: string;
