@@ -6,10 +6,6 @@ import Button from "@/components/ui/Button";
 import { useLanguage } from "@/components/lang/LanguageContext";
 import { useEffect, useState } from "react";
 import FormSkeleton from "./FormSkeleton";
-const schema = z.object({
-  example: z.string(),
-  exampleRequired: z.string().nonempty(),
-});
 
 type Inputs = {
   name: string;
@@ -21,6 +17,27 @@ type Inputs = {
 export default function Form() {
   const [isLoading, setIsLoading] = useState(true);
   const { intl } = useLanguage();
+
+  const schema = z.object({
+    name: z
+      .string()
+      .max(30, "Message must be at most 30 characters")
+      .nonempty("Message is required"),
+    email: z
+      .string()
+      .regex(
+        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+        "Invalid email format"
+      )
+      .nonempty("Message is required"),
+    subject: z.string(),
+    message: z
+      .string()
+      .min(10, "Message must be at least 10 characters")
+      .max(500, "Message must be at most 500 characters")
+      .nonempty("Message is required"),
+  });
+
   const {
     register,
     handleSubmit,
@@ -40,7 +57,9 @@ export default function Form() {
     setIsLoading(false);
   }, []);
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    console.log(data);
+  };
 
   return (
     <div className="flex flex-col gap-4 bg-[#121212] p-6 rounded-lg shadow-sm shadow-[#27272A] w-full max-w-lg border border-[#27272A] my-5">
@@ -59,39 +78,50 @@ export default function Form() {
             <label className="flex flex-col gap-2">
               {intl.contactName}
               <input
-                className=" text-black dark:text-white bg-gray-50 dark:bg-zinc-800 p-2 px-4 rounded-lg"
+                className=" text-black dark:text-white bg-gray-50 dark:bg-zinc-800 py-2 px-4 rounded-md"
                 placeholder={intl.contactNamePH}
                 {...register("name")}
               />
+              {errors.name && (
+                <span className="text-red-500">{errors.name.message}</span>
+              )}
             </label>
+
             <label className="flex flex-col gap-2">
               {intl.contactEmail}
               <input
-                className=" text-black dark:text-white bg-gray-50 dark:bg-zinc-800 p-2 px-4 rounded-lg"
+                className=" text-black dark:text-white bg-gray-50 dark:bg-zinc-800 p-2 px-4 rounded-md"
                 placeholder={intl.contactEmailPH}
                 {...register("email")}
               />
+              {errors.email && (
+                <span className="text-red-500">{errors.email.message}</span>
+              )}
             </label>
 
             <label className="flex flex-col gap-2">
               {intl.contactSubject}
               <input
                 placeholder={intl.contactSubjectPH}
-                className=" text-black dark:text-white bg-gray-50 dark:bg-zinc-800 p-2 px-4 rounded-lg"
+                className=" text-black dark:text-white bg-gray-50 dark:bg-zinc-800 p-2 px-4 rounded-md"
                 {...register("subject")}
               />
-              {errors.subject && <span>This field is required</span>}
+              {errors.subject && (
+                <span className="text-red-500">{errors.subject.message}</span>
+              )}
             </label>
             <label className="flex flex-col gap-2">
               {intl.contactMessage}
               <textarea
-                className=" text-black dark:text-white bg-gray-50 dark:bg-zinc-800 p-2 px-4 rounded-lg resize-none"
+                className=" text-black dark:text-white bg-gray-50 dark:bg-zinc-800 p-2 px-4 rounded-md resize-none"
                 placeholder={intl.contactMessagePH}
                 maxLength={500}
                 rows={10}
-                {...register("message", { required: "This field is required" })}
+                {...register("message")}
               />
-              {errors.message && <span>{errors.message.message}</span>}
+              {errors.message && (
+                <span className="text-red-500 ">{errors.message.message}</span>
+              )}
             </label>
             <div className="flex pt-2 items-center justify-center">
               <Button className="w-fit px-10" type="submit">
