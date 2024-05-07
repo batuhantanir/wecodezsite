@@ -81,7 +81,7 @@ function HeaderNav() {
         <>
           {isMobile ? (
             <motion.nav
-              className="absolute order-3 px-5 md:order-2 flex flex-col items-start gap-4 top-0 right-0 bg-white text-slate-950 dark:text-white dark:bg-slate-950 w-full pt-24 z-20  h-dvh"
+              className="absolute order-3 px-5 md:order-2 flex flex-col items-start gap-4 top-0 right-0 bg-white text-slate-950 dark:text-white dark:bg-slate-950 w-full pt-24 z-20  min-h-full"
               variants={container}
               animate={isOpen ? "open" : "closed"}
             >

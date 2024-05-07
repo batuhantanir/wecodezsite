@@ -3,6 +3,9 @@ import { cn } from "@/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { IconType } from "react-icons";
+import { useLanguage } from "../lang/LanguageContext";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa6";
 
 export const HoverEffect = ({
   items,
@@ -16,7 +19,7 @@ export const HoverEffect = ({
   className?: string;
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
+  const { intl } = useLanguage();
   return (
     <div
       className={cn(
@@ -51,6 +54,17 @@ export const HoverEffect = ({
           <Card>
             <CardTitle Icon={item.icon}>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
+            <Link
+              href="/contact"
+              className=" flex gap-2 flex-ce items-center border border-zinc-300 hover:bg-zinc-200 text-zinc-300 hover:text-black w-fit rounded-lg px-2 py-0.5 transition-colors duration-200 ease-in-out"
+              style={{
+                fontSize: "0.9rem",
+                lineHeight: "1.5",
+                letterSpacing: "0.05em",
+              }}
+            >
+              {intl.cardButton} <FaArrowRight className="-rotate-45" />
+            </Link>
           </Card>
         </div>
       ))}
@@ -72,8 +86,8 @@ export const Card = ({
         className
       )}
     >
-      <div className="relative z-50">
-        <div className="p-4">{children}</div>
+      <div className="relative z-50 h-full">
+        <div className="p-4 flex flex-col h-full ">{children}</div>
       </div>
     </div>
   );
@@ -110,7 +124,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
+        "mt-8 mb-4    text-zinc-400 tracking-wide leading-relaxed text-sm flex-1",
         className
       )}
     >

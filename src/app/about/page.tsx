@@ -1,7 +1,8 @@
 import React from "react";
+import About from "@/components/About";
 
 function Page() {
-  return <div className="pt-28 max-w-7xl mx-auto">Page</div>;
+  return <About />;
 }
 
 export default Page;
