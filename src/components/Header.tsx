@@ -44,7 +44,7 @@ function HeaderNav() {
       },
     },
     closed: {
-      opacity: 1,
+      opacity: 0,
       x: "100%",
     },
   };
@@ -74,7 +74,7 @@ function HeaderNav() {
             animate={{ opacity: 1, x: 0 }}
             className="hover:cursor-pointer"
           >
-            <img className="w-28 h-fit" src="/we.svg" alt="Logo" />
+            <img className="w-28 h-18" src="/we.svg" alt="Logo" />
           </motion.a>
           <Hambuger isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>

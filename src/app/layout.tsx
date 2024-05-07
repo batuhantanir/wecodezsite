@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       rel: "icon",
       type: "image/x-icon",
       sizes: "16x16",
-      url: "/ws.svg",
+      url: "/we.svg",
     },
     {
       rel: "apple-touch-icon",
@@ -45,7 +45,7 @@ export default function RootLayout({
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
-          className="bg-white dark:bg-slate-950 text-black dark:text-white w-full min-h-screen relative  overflow-x-hidden"
+          className="bg-white dark:bg-slate-950 text-black dark:text-white w-full min-h-screen relative  overflow-x-hidden "
         >
           <LanguageProvider>
             <HeaderNav />
