@@ -18,9 +18,9 @@ export const footerData = [
   {
     title: "Bize Ulaşın",
     links: [
-      { label: "Müşteri Hizmetleri", link: "tel:+905059956402" },
-      { label: "WhatsApp", link: "https://wa.me/+905059956402" },
-      { label: "Instagram", link: "https://www.instagram.com/turfestcom" },
+      { label: "Müşteri Hizmetleri", link: "tel:+905362621566" },
+      { label: "WhatsApp", link: "https://wa.me/+905362621566" },
+      { label: "Instagram", link: "https://www.instagram.com/wecodez" },
     ],
   },
 ];
