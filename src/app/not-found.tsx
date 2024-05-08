@@ -1,29 +1,15 @@
 "use client";
-import { useTheme } from "next-themes";
 import Link from "next/link";
 import React from "react";
 
-function NotFound() {
+async function NotFound() {
   React.useEffect(() => {
     import("@lottiefiles/lottie-player");
   });
 
-  const { resolvedTheme } = useTheme();
-  console.log(resolvedTheme);
   return (
     <div className="flex flex-col gap-5 items-center justify-center w-full min-h-full flex-1 py-10">
       <div className="relative w-[200px] h-[150px] sm:w-[300px] sm:h-[230px]">
-        <lottie-player
-          autoplay
-          loop
-          src={
-            resolvedTheme == "dark" || resolvedTheme == "system"
-              ? "/black-not-found.json"
-              : "/black-not-found.json"
-          }
-          fill
-          alt="Sayfa Bulunamadı 404"
-        />
         <h2 className="sr-only">Loading</h2>
       </div>
       <div className="text-center">
