@@ -9,6 +9,9 @@ function ThemeSwitch({ className }: { className?: string }) {
 
   useEffect(() => {
     setMounted(true);
+    if (resolvedTheme === "system") {
+      setTheme("dark"); 
+    }
   }, []);
 
   const changeTheme = () => {
