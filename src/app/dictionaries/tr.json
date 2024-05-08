@@ -2,11 +2,14 @@
   "navbarHome": "Anasayfa",
   "navbarAbout": "Hakkımızda",
   "navbarContact": "İletişim",
+
   "headerTitleOne": "Güçlü",
   "headerTitleTwo": "geliştirme ortamı",
   "headerDescription": "En son teknolojiler ve çerçevelerle güzel ürünler üretiyoruz. Harika ürünler üretmeyi seven tutkulu geliştiricilerden ve tasarımcılardan oluşan bir ekibiz.",
+
   "languageOne": "İngilizce",
   "languageTwo": "Türkçe",
+
   "contactTitle": "Bize ulaşın",
   "contactDescription": "Size yardım etmek için daima buradayız. Herhangi bir sorunuz varsa bizimle iletişime geçebilirsiniz.",
   "contactSubject": "Konu",
@@ -14,10 +17,11 @@
   "contactEmail": "E-posta",
   "contactMessage": "Mesajınız",
   "contactButton": "Gönder",
-  "contactSubjectPH": "Konu başlığını girin...",
-  "contactNamePH": "İsminizi girin...",
-  "contactEmailPH": "E-posta adresinizi girin...",
-  "contactMessagePH": "Mesajınızı girin...",
+  "contactSubjectPH": "Hizmetler",
+  "contactNamePH": "",
+  "contactEmailPH": "info@wecodez.com",
+  "contactMessagePH": "Hizmetleriniz hakkında bilgi almak istiyorum...",
+
   "cardButton": "Daha fazla bilgi",
   "cardTitleOne": "Web Geliştirme",
   "cardDescriptionOne": "En son teknolojiler ve frameworkler ile modern responsive web siteleri oluşturuyoruz.",
@@ -25,6 +29,7 @@
   "cardDescriptionTwo": "Mobil uygulamalarınızı en son teknolojilerle oluşturuyoruz. Hem iOS hem de Android platformları için destek sunuyoruz.",
   "cardTitleThree": "Backend Geliştirme",
   "cardDescriptionThree": "Güçlü ve ölçeklenebilir backend hizmetleri sunuyoruz. Hem bulut tabanlı hem de yerel sunucular için destek sunuyoruz.",
+
   "commentOneQuote": "Wecodez ile çalışmak gerçekten harika bir deneyimdi. Hem web hem de mobil uygulamalar için sundukları hizmetler mükemmeldi. Ekibin profesyonelliği ve iletişimleri takdire şayandı.",
   "commentOneAuthor": "Ayşe K.",
   "commentOneTitle": "Harika bir deneyim",
@@ -40,6 +45,7 @@
   "commentFiveQuote": "Wecodez, işini gerçekten bilen bir ekip. Projemizin her aşamasında bize destek oldular ve sonuçtan son derece memnun kaldık. İşlerinde başarılarının devamını dilerim!",
   "commentFiveAuthor": "Deniz A.",
   "commentFiveTitle": "Profesyonellik ve Destek",
-  "footerTitle": "Bekleme listesine katılın",
-  "footerDescription": "Web üzerindeki en iyi işlemsel e-posta hizmeti olan MailJet'e hoş geldiniz. İşletmeniz için güvenilir, ölçeklenebilir ve özelleştirilebilir e-posta çözümleri sunuyoruz. İster sipariş onayları, ister şifre sıfırlama e-postaları veya promosyon kampanyaları gönderin, MailJet sizi koruyor."
+
+  "footerTitle": "Kampanyalarımızdan haberdar olun!",
+  "footerDescription": "Kampanyalarımızdan haberdar olarak en son indirimlerden ve fırsatlardan yararlanabilirsiniz. E-posta adresinizi girerek bültenimize abone olun."
 }

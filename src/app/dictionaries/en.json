@@ -2,11 +2,14 @@
   "navbarHome": "Home",
   "navbarAbout": "About",
   "navbarContact": "Contact",
-  "headerTitleOne": "The Ultimate",
-  "headerTitleTwo": "development studio",
+
+  "headerTitleOne": "We",
+  "headerTitleTwo": "Codez",
   "headerDescription": "We build beautiful products with the latest technologies and frameworks. We are a team of passionate developers and designers that love to build amazing products.",
+
   "languageOne": "English",
   "languageTwo": "Turkish",
+
   "contactTitle": "Contact Us",
   "contactDescription": "We are always here to help you. If you have any questions or need help, feel free to contact us.",
   "contactSubject": "Subject",
@@ -16,8 +19,9 @@
   "contactButton": "Submit",
   "contactSubjectPH": "Enter the subject...",
   "contactNamePH": "Enter your name...",
-  "contactEmailPH": "Enter your email address...",
+  "contactEmailPH": "info@wecodez.com",
   "contactMessagePH": "Enter your message...",
+
   "cardButton": "Learn More",
   "cardTitleOne": "Web Development",
   "cardDescriptionOne": "We build beautiful and responsive websites with the latest technologies and frameworks.",
@@ -25,6 +29,7 @@
   "cardDescriptionTwo": "We build your mobile apps with the latest technologies. We offer support for both iOS and Android platforms.",
   "cardTitleThree": "Backend development",
   "cardDescriptionThree": "We offer powerful and scalable backend services. We offer support for both cloud-based and local servers.",
+
   "commentOneQuote": "Working with Wecodez was truly a wonderful experience. The services they provided for both web and mobile applications were excellent. The professionalism of the team and their communication were commendable.",
   "commentOneAuthor": "Ayşe K.",
   "commentOneTitle": "A Wonderful Experience",
@@ -40,6 +45,7 @@
   "commentFiveQuote": "Wecodez is a truly knowledgeable team. They supported us at every stage of our project, and we were extremely satisfied with the results. Wishing them continued success in their work!",
   "commentFiveAuthor": "Deniz A.",
   "commentFiveTitle": "Professionalism and Support",
-  "footerTitle": "Join the waitlist",
-  "footerDescription": "Welcome to MailJet, the best transactional email service on the web. We provide reliable, scalable, and customizable email solutions for your business. Whether you're sending order confirmations, password reset emails, or promotional campaigns, MailJet has got you covered."
+  
+  "footerTitle": "Be informed about our campaigns!",
+  "footerDescription": "Stay up to date with our campaigns and take advantage of the latest discounts and deals. Subscribe to our newsletter by entering your e-mail address."
 }
