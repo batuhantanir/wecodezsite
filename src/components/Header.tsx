@@ -19,15 +19,15 @@ function HeaderNav() {
   const navItems = [
     {
       title: intl.navbarHome,
-      link: "/",
+      href: "/",
     },
     {
       title: intl.navbarAbout,
-      link: "/about",
+      href: "/about",
     },
     {
       title: intl.navbarContact,
-      link: "/contact",
+      href: "/contact",
     },
   ];
 
@@ -42,10 +42,12 @@ function HeaderNav() {
         type: "tween",
         stiffness: 300,
       },
+      display: "flex",
     },
     closed: {
       opacity: 0,
       x: "100%",
+      display: "none",
     },
   };
 
@@ -65,7 +67,12 @@ function HeaderNav() {
   }, [isOpen]);
 
   return (
-    <div className="absolute top-0 md:left-1/2 md:-translate-x-1/2  z-30 w-full bg-transparent py-5   overflow-x-hidden h-screen md:h-fit md:max-w-7xl">
+    <div
+      className={cn(
+        "absolute top-0 md:left-1/2 md:-translate-x-1/2  z-30 w-full bg-transparent py-5   overflow-x-hidden h-fit md:h-fit md:max-w-7xl transition-colors duration-300",
+        isOpen && "bg-neutral-950"
+      )}
+    >
       <div className="flex items-center justify-between">
         <div className="max-w-7xl w-full bg-transparent px-8 md:px-4 py-5 flex justify-between items-center ">
           <motion.a
@@ -76,31 +83,7 @@ function HeaderNav() {
           >
             <img className="w-28 h-18" src="/we.svg" alt="Logo" />
           </motion.a>
-          <Hambuger isOpen={isOpen} setIsOpen={setIsOpen} />
-        </div>
-        <>
-          {isMobile ? (
-            <motion.nav
-              className="absolute order-3 px-5 md:order-2 flex flex-col items-start gap-4 top-0 right-0 bg-white text-slate-950 dark:text-white dark:bg-slate-950 w-full pt-24 z-20  min-h-full"
-              variants={container}
-              animate={isOpen ? "open" : "closed"}
-            >
-              {navItems.map((item, index) => (
-                <motion.a
-                  href={item.link}
-                  key={index}
-                  variants={child}
-                  className=" text-lg md:text-xl ml-4 font-medium transition-colors duration-300"
-                >
-                  {item.title}
-                </motion.a>
-              ))}
-              <motion.div variants={child} className=" space-x-2 ml-4">
-                <ThemeSwitch />
-                <LangSwitch />
-              </motion.div>
-            </motion.nav>
-          ) : (
+          {!isMobile ? (
             <motion.nav
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
@@ -108,11 +91,11 @@ function HeaderNav() {
             >
               {navItems.map((item, index) => (
                 <Link
-                  href={item.link}
+                  href={item.href}
                   key={index}
                   className={cn(
                     " text-xl ml-4 font-semibold transition-all duration-300",
-                    pathname == item.link && "opacity-[.80] "
+                    pathname == item.href && "opacity-[.80] "
                   )}
                 >
                   {item.title}
@@ -123,9 +106,55 @@ function HeaderNav() {
                 <ThemeSwitch />
               </div>
             </motion.nav>
+          ) : (
+            <>
+              <Hambuger isOpen={isOpen} setIsOpen={setIsOpen} />
+            </>
           )}
-        </>
+        </div>
       </div>
+      {isMobile && (
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className=" shadow-4xl px-5 pt-5 bg-transparent"
+            >
+              <ul className="grid gap-2">
+                {navItems.map((item, index) => {
+                  return (
+                    <motion.li
+                      initial={{ scale: 0, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
+                        delay: 0.1 + index / 10,
+                      }}
+                      key={index}
+                      className="w-full p-[0.08rem] rounded-xl bg-gradient-to-tr from-neutral-800 via-neutral-950 to-neutral-700"
+                    >
+                      <a
+                        onClick={() => setIsOpen((prev) => !prev)}
+                        className={
+                          "flex items-center justify-between w-full p-5 rounded-xl bg-neutral-950"
+                        }
+                        href={item.href}
+                      >
+                        <span className="flex gap-1 text-lg">{item.title}</span>
+                      </a>
+                    </motion.li>
+                  );
+                })}
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
     </div>
   );
 }

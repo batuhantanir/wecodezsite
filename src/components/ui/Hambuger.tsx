@@ -19,7 +19,7 @@ function Hambuger({
   return (
     <motion.button
       className={cn(
-        "md:hidden cursor-pointer  active:scale-90 transition-all duration-300 z-30  flex flex-col justify-center items-center gap-1 w-10 h-10 rounded-md",
+        "md:hidden cursor-pointer  active:scale-90 transition-all duration-300 z-50  flex flex-col justify-center items-center gap-1 w-10 h-10 rounded-md",
         className
       )}
       type="button"
