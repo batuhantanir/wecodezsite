@@ -67,95 +67,132 @@ function HeaderNav() {
   }, [isOpen]);
 
   return (
-    <div
-      className={cn(
-        "absolute top-0 md:left-1/2 md:-translate-x-1/2  z-30 w-full bg-transparent py-5   overflow-x-hidden h-fit md:h-fit md:max-w-7xl transition-colors duration-300",
-        isOpen && "bg-neutral-950"
-      )}
-    >
-      <div className="flex items-center justify-between">
-        <div className="max-w-7xl w-full bg-transparent px-8 md:px-4 py-5 flex justify-between items-center ">
-          <motion.a
-            href="/"
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="hover:cursor-pointer"
-          >
-            <img className="w-28 h-18" src="/we.svg" alt="Logo" />
-          </motion.a>
-          {!isMobile ? (
-            <motion.nav
-              initial={{ opacity: 0, x: 100 }}
+    <>
+      <div
+        className={cn(
+          "absolute top-0 md:left-1/2 md:-translate-x-1/2  z-30 w-full bg-transparent py-5   overflow-x-hidden h-fit md:h-fit md:max-w-7xl transition-colors duration-300 z-40",
+          isOpen && isMobile && "bg-neutral-950"
+        )}
+      >
+        <div className="flex items-center justify-between">
+          <div className="max-w-7xl w-full bg-transparent px-8 md:px-4 py-5 flex justify-between items-center ">
+            <motion.a
+              href="/"
+              initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
-              className="hidden md:flex items-center gap-4 text-slate-950 dark:text-white"
+              className="hover:cursor-pointer"
             >
-              {navItems.map((item, index) => (
-                <Link
-                  href={item.href}
-                  key={index}
-                  className={cn(
-                    " text-xl ml-4 font-semibold transition-all duration-300",
-                    pathname == item.href && "opacity-[.80] "
-                  )}
-                >
-                  {item.title}
-                </Link>
-              ))}
-              <div className="ml-5 flex gap-4 w-fit">
-                <LangSwitch />
-                <ThemeSwitch />
-              </div>
-            </motion.nav>
-          ) : (
-            <>
-              <Hambuger isOpen={isOpen} setIsOpen={setIsOpen} />
-            </>
-          )}
+              <img className="w-28 h-18" src="/we.svg" alt="Logo" />
+            </motion.a>
+            {!isMobile ? (
+              <motion.nav
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="hidden md:flex items-center gap-4 text-slate-950 dark:text-white"
+              >
+                {navItems.map((item, index) => (
+                  <Link
+                    href={item.href}
+                    key={index}
+                    className={cn(
+                      " text-xl ml-4 font-semibold transition-all duration-300",
+                      pathname == item.href && "opacity-[.80] "
+                    )}
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+                <div className="ml-5 flex gap-4 w-fit">
+                  <LangSwitch />
+                  <ThemeSwitch />
+                </div>
+              </motion.nav>
+            ) : (
+              <>
+                <Hambuger isOpen={isOpen} setIsOpen={setIsOpen} />
+              </>
+            )}
+          </div>
         </div>
-      </div>
-      {isMobile && (
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className=" shadow-4xl px-5 pt-5 bg-transparent"
-            >
-              <ul className="grid gap-2">
-                {navItems.map((item, index) => {
-                  return (
-                    <motion.li
-                      initial={{ scale: 0, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 260,
-                        damping: 20,
-                        delay: 0.1 + index / 10,
-                      }}
-                      key={index}
-                      className="w-full p-[0.08rem] rounded-xl bg-gradient-to-tr from-neutral-800 via-neutral-950 to-neutral-700"
-                    >
-                      <a
-                        onClick={() => setIsOpen((prev) => !prev)}
-                        className={
-                          "flex items-center justify-between w-full p-5 rounded-xl bg-neutral-950"
-                        }
-                        href={item.href}
+        {isMobile && (
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{
+                  opacity: 0,
+                }}
+                transition={{ duration: 0.2, staggerChildren: 0.15 }}
+                className=" shadow-4xl px-5 pt-5 bg-transparent "
+              >
+                <nav className="grid gap-2">
+                  {navItems.map((item, index) => {
+                    return (
+                      <motion.div
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        exit={{
+                          scale: 0,
+                          opacity: 0,
+                          transition: {
+                            when: "afterChildren",
+                          },
+                        }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 260,
+                          damping: 20,
+                          delay: 0.1 + index / 10,
+                        }}
+                        key={index}
+                        className="w-full p-[0.08rem] rounded-xl bg-gradient-to-tr from-neutral-800 via-neutral-950 to-neutral-700"
                       >
-                        <span className="flex gap-1 text-lg">{item.title}</span>
-                      </a>
-                    </motion.li>
-                  );
-                })}
-              </ul>
-            </motion.div>
-          )}
+                        <Link
+                          onClick={() => setIsOpen((prev) => !prev)}
+                          className={cn(
+                            "flex items-center justify-between w-full p-5 rounded-xl bg-neutral-950",
+                            pathname == item.href && "opacity-[.80] "
+                          )}
+                          href={item.href}
+                        >
+                          <span className="flex gap-1 text-lg">
+                            {item.title}
+                          </span>
+                        </Link>
+                      </motion.div>
+                    );
+                  })}
+                </nav>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        )}
+      </div>
+      {isMobile && isOpen && (
+        <AnimatePresence>
+          <motion.div
+            onClick={() => {
+              setIsOpen(false);
+            }}
+            initial={{ opacity: 0, y: "100%" }}
+            animate={{ opacity: 0.5, y: 0 }}
+            exit={{
+              opacity: 0,
+              y: "100%",
+            }}
+            transition={{
+              duration: 0.5,
+              type: "spring",
+              stiffness: 300,
+              damping: 30,
+              mass: 0.2,
+            }}
+            className="absolute top-0 left-0 min-h-full w-full bg-black z-30"
+          ></motion.div>
         </AnimatePresence>
       )}
-    </div>
+    </>
   );
 }
 
