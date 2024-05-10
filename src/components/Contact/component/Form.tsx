@@ -65,17 +65,17 @@ export default function Form() {
     <div className="flex flex-col gap-4 bg-[#121212] p-6 rounded-lg shadow-sm shadow-[#27272A] w-full max-w-lg border border-[#27272A] my-5">
       {!isLoading ? (
         <>
-          <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
+          <h2 className="font-bold text-xl text-violet-300 dark:text-neutral-400">
             {intl.contactTitle}
           </h2>
-          <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
+          <p className="text-zinc-300 text-sm max-w-sm mt-2 dark:text-neutral-300">
             {intl.contactDescription}
           </p>
           <form
             className="flex flex-col gap-4"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <label className="flex flex-col gap-2">
+            <label className="flex flex-col text-violet-200 dark:text-white gap-2">
               {intl.contactName}
               <input
                 className=" text-black dark:text-white bg-gray-50 dark:bg-zinc-800 py-2 px-4 rounded-md"
@@ -87,10 +87,10 @@ export default function Form() {
               )}
             </label>
 
-            <label className="flex flex-col gap-2">
+            <label className="flex flex-col gap-2 text-violet-200 dark:text-white">
               {intl.contactEmail}
               <input
-                className=" text-black dark:text-white bg-gray-50 dark:bg-zinc-800 p-2 px-4 rounded-md"
+                className=" text-black dark:text-white bg-white dark:bg-zinc-800 p-2 px-4 rounded-md"
                 placeholder={intl.contactEmailPH}
                 {...register("email")}
               />
@@ -99,7 +99,7 @@ export default function Form() {
               )}
             </label>
 
-            <label className="flex flex-col gap-2">
+            <label className="flex flex-col gap-2 text-violet-200 dark:text-white">
               {intl.contactSubject}
               <input
                 placeholder={intl.contactSubjectPH}
@@ -110,7 +110,7 @@ export default function Form() {
                 <span className="text-red-500">{errors.subject.message}</span>
               )}
             </label>
-            <label className="flex flex-col gap-2">
+            <label className="flex flex-col gap-2 text-violet-200 dark:text-white">
               {intl.contactMessage}
               <textarea
                 className=" text-black dark:text-white bg-gray-50 dark:bg-zinc-800 p-2 px-4 rounded-md resize-none"

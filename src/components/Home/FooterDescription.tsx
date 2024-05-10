@@ -23,6 +23,7 @@ function FooterDescription() {
               size={23}
             />
           </Link>
+
           <Link href="https://www.instagram.com/bzarreuproar/">
             <FaInstagram
               className="text-neutral-800 dark:text-neutral-300 hover:scale-125 active:scale-125 transition-all duration-200"
