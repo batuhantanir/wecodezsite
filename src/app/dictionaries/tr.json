@@ -47,5 +47,13 @@
   "commentFiveTitle": "Profesyonellik ve Destek",
 
   "footerTitle": "Kampanyalarımızdan haberdar olun!",
-  "footerDescription": "Kampanyalarımızdan haberdar olarak en son indirimlerden ve fırsatlardan yararlanabilirsiniz. E-posta adresinizi girerek bültenimize abone olun."
+  "footerDescription": "Kampanyalarımızdan haberdar olarak en son indirimlerden ve fırsatlardan yararlanabilirsiniz. E-posta adresinizi girerek bültenimize abone olun.",
+  "footerLOH": "Services",
+  "footerLOL": "Web Development",
+  "footerLOT": "Mobile Development",
+  "footerLOB": "Backend Development",
+  "footerLTH": "About Us",
+  "footerLTL": "Our Team",
+  "footerLTT": "Our Projects",
+  "footerLTB": "Our Blog"
 }

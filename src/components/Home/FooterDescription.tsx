@@ -6,7 +6,7 @@ function FooterDescription() {
   return (
     <div className="py-8 md:mx-auto border-t border-neutral-600 px-4 lg:px-20 ">
       <div className="flex justify-between container mx-auto">
-        <p className="text-neutral-800 dark:text-neutral-300 font-sans font-medium">
+        <p className="text-neutral-800 dark:text-neutral-300 text-sm md:text-base font-sans font-medium">
           © 2024 We Codez. All rights reserved.
         </p>
         <div className="space-x-5 flex">

@@ -49,7 +49,7 @@ export function Footer() {
               </button>
             </div>
           </div>
-          <div className="inline-flex z-10 text-neutral-600 flex-col sm:flex-row gap-5 justify-between p-4 pr-20 sm:gap-10 lg:gap-20 md:justify-end lg:flex-nowrap ">
+          <div className="inline-flex z-10 text-neutral-600 flex-col sm:flex-row gap-5 justify-between p-4 sm:gap-10 lg:gap-20 md:justify-end lg:flex-nowrap ">
             {groups}
           </div>
         </div>
