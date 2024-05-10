@@ -70,7 +70,7 @@ function HeaderNav() {
     <>
       <div
         className={cn(
-          "absolute top-0 md:left-1/2 md:-translate-x-1/2  z-30 w-full bg-transparent py-5   overflow-x-hidden h-fit md:h-fit md:max-w-7xl transition-colors duration-300 z-40",
+          "absolute top-0 md:left-1/2 md:-translate-x-1/2 w-full bg-transparent py-5   overflow-x-hidden h-fit md:h-fit md:max-w-7xl transition-colors duration-300 z-40",
           isOpen && isMobile && "bg-neutral-950"
         )}
       >
@@ -163,6 +163,27 @@ function HeaderNav() {
                       </motion.div>
                     );
                   })}
+                  <motion.div
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{
+                      scale: 0,
+                      opacity: 0,
+                      transition: {
+                        when: "afterChildren",
+                      },
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 260,
+                      damping: 20,
+                      delay: 0.1 + navItems.length / 10,
+                    }}
+                    className="ml-5 flex gap-4 w-fit"
+                  >
+                    <LangSwitch />
+                    <ThemeSwitch />
+                  </motion.div>
                 </nav>
               </motion.div>
             )}
