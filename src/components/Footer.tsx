@@ -29,7 +29,7 @@ export function Footer() {
 
   return (
     <footer className="">
-      <div className="relative antialiased ">
+      <div className="relative antialiased">
         <div className="w-full bg-neutral-950  py-20 md:py-16 md:flex items-center">
           <div className="w-full flex flex-col lg:flex-row items-start gap-10 justify-between container mx-auto">
             <div className="max-w-lg p-4 ">
