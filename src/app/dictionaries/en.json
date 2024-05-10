@@ -47,5 +47,13 @@
   "commentFiveTitle": "Professionalism and Support",
   
   "footerTitle": "Be informed about our campaigns!",
-  "footerDescription": "Stay up to date with our campaigns and take advantage of the latest discounts and deals. Subscribe to our newsletter by entering your e-mail address."
+  "footerDescription": "Stay up to date with our campaigns and take advantage of the latest discounts and deals. Subscribe to our newsletter by entering your e-mail address.",
+  "footerLOH": "Services",
+  "footerLOL": "Web Development",
+  "footerLOT": "Mobile Development",
+  "footerLOB": "Backend Development",
+  "footerLTH": "About Us",
+  "footerLTL": "Our Team",
+  "footerLTT": "Our Projects",
+  "footerLTB": "Our Blog"
 }

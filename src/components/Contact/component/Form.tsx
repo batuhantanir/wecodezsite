@@ -21,21 +21,21 @@ export default function Form() {
   const schema = z.object({
     name: z
       .string()
-      .max(30, "Message must be at most 30 characters")
-      .nonempty("Message is required"),
+      .max(30, "Name must be at most 30 characters")
+      .min(1, "Name is required"),
     email: z
       .string()
       .regex(
         /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
         "Invalid email format"
       )
-      .nonempty("Message is required"),
+      .min(1, "Email is required"),
     subject: z.string(),
     message: z
       .string()
       .min(10, "Message must be at least 10 characters")
       .max(500, "Message must be at most 500 characters")
-      .nonempty("Message is required"),
+      .min(1, "Message is required"),
   });
 
   const {
