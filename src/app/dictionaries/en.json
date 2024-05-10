@@ -3,8 +3,8 @@
   "navbarAbout": "About",
   "navbarContact": "Contact",
 
-  "headerTitleOne": "We",
-  "headerTitleTwo": "Codez",
+  "headerTitleOne": "Create & Innovate",
+  "headerTitleTwo": "Elevate!",
   "headerDescription": "We build beautiful products with the latest technologies and frameworks. We are a team of passionate developers and designers that love to build amazing products.",
 
   "languageOne": "English",
@@ -17,10 +17,10 @@
   "contactEmail": "Email",
   "contactMessage": "Message",
   "contactButton": "Submit",
-  "contactSubjectPH": "Enter the subject...",
-  "contactNamePH": "Enter your name...",
+  "contactSubjectPH": "Services, Projects, Support...",
+  "contactNamePH": "John",
   "contactEmailPH": "info@wecodez.com",
-  "contactMessagePH": "Enter your message...",
+  "contactMessagePH": "I would like to receive information about your services...",
 
   "cardButton": "Learn More",
   "cardTitleOne": "Web Development",
