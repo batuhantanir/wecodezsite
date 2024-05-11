@@ -1,5 +1,6 @@
 import React from "react";
 import { Tooltip } from "./component/ToolTip";
+import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
 
 function About() {
   return (
@@ -26,8 +27,9 @@ function About() {
               güçlendirerek, işlerini büyütmelerine ve başarıya ulaşmalarına
               yardımcı olmak için sürekli olarak kendimizi geliştiririz. Her bir
               projede özgün ve yaratıcı yaklaşımlarımızla, endüstri
-              standartlarını aşan çözümler sunmayı hedefleriz. Müşteri
- 
+              standartlarını aşan çözümler sunmayı hedefleriz. Müşterilerimizin
+              ihtiyaçlarını anlayarak, onlara özel çözümler geliştirir ve
+              projelerini başarıya taşırız.
             </p>
           </div>
           <div>
@@ -41,7 +43,6 @@ function About() {
               onlara özel çözümler sunarız. Her bir projede müşterilerimizle iş
               birliği yaparak, onların hedeflerine ulaşmaları için en uygun
               çözümleri geliştiririz. Wecodez olarak, teknolojiyi kullanarak, iş
-       
             </p>
           </div>
           <div>
