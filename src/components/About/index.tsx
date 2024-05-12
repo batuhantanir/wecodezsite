@@ -1,57 +1,73 @@
+"use client";
 import React from "react";
 import { Tooltip } from "./component/ToolTip";
-import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
+import { useLanguage } from "../lang/LanguageContext";
+import { IoMdMailOpen } from "react-icons/io";
+import { FaWhatsapp, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
+import Link from "next/link";
 
 function About() {
+  const { intl } = useLanguage();
   return (
     <div className=" pt-40 md:pt-44 max-w-7xl mx-auto mb-20">
       <div className="flex flex-col-reverse md:flex-row gap-10 md:gap-20 px-5 md:px-0 text-neutral-700 dark:text-zinc-200">
         <div className=" md:w-3/5">
-          <div className="space-y-4">
-            <h2 className="font-medium text-xl">About Page</h2>
-            <p className="ml-2">
-              Wecodez, web, mobil ve backend geliştirme alanında uzmanlaşmış bir
-              yazılım şirketidir. Müşterilerine yenilikçi çözümler sunarak
-              dijital ürünlerini ve hizmetlerini güçlendirme misyonuyla yola
-              çıkmıştır. Ekibi, tecrübeli ve yetenekli yazılım mühendislerinden
-              oluşmakta olup, her projeye özgü çözümler üreterek müşteri
-              memnuniyetini en üst seviyede tutmayı hedeflemektedir.
-            </p>
+          <div className="space-y-3">
+            <h2 className="font-medium dark:text-neutral-400  text-zinc-800 text-xl">
+              {intl.aboutTitle}
+            </h2>
+            <p className="ml-2">{intl.aboutDescription}</p>
+          </div>
+          <div className="space-y-3">
+            <h2 className="font-medium text-xl dark:text-neutral-400  text-zinc-800 pt-10">
+              {intl.aboutTitleTwo}
+            </h2>
+            <p className="ml-2">{intl.aboutDescriptionTwo}</p>
+          </div>
+          <div className="space-y-3">
+            <h2 className="font-medium text-xl dark:text-neutral-400  text-zinc-800 pt-10">
+              {intl.aboutTitleThree}
+            </h2>
+            <p className="ml-2">{intl.aboutDescriptionThree}</p>
           </div>
           <div className="space-y-4">
-            <h2 className="font-medium text-xl pt-10">Vizyonumuz</h2>
-            <p className="ml-2">
-              Wecodez olarak, dijital dünyada sınırları zorlayan, inovasyon ve
-              teknolojiyi kullanarak dönüştürücü çözümler sunmak vizyonumuzun
-              temelini oluşturur. Müşterilerimizin dijital varlıklarını
-              güçlendirerek, işlerini büyütmelerine ve başarıya ulaşmalarına
-              yardımcı olmak için sürekli olarak kendimizi geliştiririz. Her bir
-              projede özgün ve yaratıcı yaklaşımlarımızla, endüstri
-              standartlarını aşan çözümler sunmayı hedefleriz. Müşterilerimizin
-              ihtiyaçlarını anlayarak, onlara özel çözümler geliştirir ve
-              projelerini başarıya taşırız.
-            </p>
-          </div>
-          <div>
-            <h2 className="font-medium text-xl pt-10">Misyonumuz</h2>
-            <p className="ml-2">
-              Wecodez, müşterilerine dijital dünyada rekabet avantajı sağlayan
-              yenilikçi çözümler sunarak, işlerini büyütmelerine ve başarıya
-              ulaşmalarına yardımcı olmayı misyon edinmiştir. Müşteri
-              memnuniyetini en üst seviyede tutarak, her projede kaliteli ve
-              özgün çözümler üretiriz. Müşterilerimizin ihtiyaçlarını anlayarak,
-              onlara özel çözümler sunarız. Her bir projede müşterilerimizle iş
-              birliği yaparak, onların hedeflerine ulaşmaları için en uygun
-              çözümleri geliştiririz. Wecodez olarak, teknolojiyi kullanarak, iş
-            </p>
-          </div>
-          <div>
-            <h2 className="font-medium text-xl pt-10">İletişim Bilgileri</h2>
-            <p className="ml-2">
-              Adres: [Şirket Adresi] Telefon: [Telefon Numarası] E-posta:
-              [E-posta Adresi] Website: [Website Adresi] whatsaap:[whatsaap
-              numarası]
-            </p>
+            <h2 className="font-medium text-xl dark:text-neutral-400  text-zinc-800 pt-10">
+              {intl.aboutTitleFour}
+            </h2>
+            <div className="ml-2 flex flex-col md:flex-row gap-4 md:gap-14">
+              <div className="flex flex-col gap-4">
+                <Link
+                  href="tel:+905362621566"
+                  className="flex gap-5 items-center"
+                >
+                  <FaPhoneAlt className="text-orange-400" />
+                  <span>+905362621566</span>
+                </Link>
+                <Link
+                  href="https://wa.me/+905362621566"
+                  className="flex gap-4 items-center"
+                >
+                  <FaWhatsapp size={20} className="text-green-500" />
+                  <span>+905362621566</span>
+                </Link>
+              </div>
+              <div className="flex flex-col gap-4">
+                <Link
+                  href="mailto:info@wecodez.com"
+                  className="flex gap-4 items-center"
+                >
+                  <IoMdMailOpen size={20} className="text-zinc-600" />
+                  <span>info@wecodez.com</span>
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/company/102354830/admin/feed/posts/"
+                  className="flex gap-4 items-center"
+                >
+                  <FaLinkedin size={20} className="text-[#0762C8]" />
+                  <span>We Codez</span>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
         <div className="md:pt-10 md:w-2/5 flex flex-col gap-20 items-center">
