@@ -1,5 +1,11 @@
 "use client";
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  use,
+} from "react";
 import { getDictionary } from "@/app/getLocal";
 import { json } from "stream/consumers";
 
@@ -43,6 +49,13 @@ export const LanguageProvider = ({
     };
     fetchIntlData();
   }, []);
+
+  useEffect(() => {
+    const html = document.querySelector("html");
+    if (html) {
+      html.setAttribute("lang", lang);
+    }
+  }, [lang]);
 
   const handleSwitcherClick = async (lang: Language) => {
     document.cookie = `NEXT_LOCALE=${lang}; path=/`;

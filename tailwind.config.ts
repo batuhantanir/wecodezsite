@@ -12,6 +12,9 @@ module.exports = {
   theme: {
     // rest of the code
     extend: {
+      fontFamily: {
+        nourd: ["nourd","sans-serif"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
