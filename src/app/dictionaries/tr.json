@@ -46,6 +46,14 @@
   "commentFiveAuthor": "Deniz A.",
   "commentFiveTitle": "Profesyonellik ve Destek",
 
+  "aboutTitle": "Biz Kimiz",
+  "aboutDescription": "Wecodez, web, mobil ve backend geliştirme alanında uzmanlaşmış bir yazılım şirketidir. Müşterilerine yenilikçi çözümler sunarak dijital ürünlerini ve hizmetlerini güçlendirme misyonuyla yola çıkmıştır. Ekibi, tecrübeli ve yetenekli yazılım mühendislerinden oluşmakta olup, her projeye özgü çözümler üreterek müşteri memnuniyetini en üst seviyede tutmayı hedeflemektedir.",
+  "aboutTitleTwo": "Misyonumuz",
+  "aboutDescriptionTwo": "Misyonumuz müşterilerimize en iyi hizmeti sunmaktır. Hedeflerinize ulaşmanıza yardımcı olacak güzel ve işlevsel ürünler üretmeyi amaçlıyoruz. Projelerinizde size yardımcı olmak için buradayız. İşbirliği yaparak, projelerinizi hayata geçirmek için en iyi çözümleri sunuyoruz. Müşterilerimizin memnuniyeti ve başarısı bizim için her şeyden önemlidir.",
+  "aboutTitleThree": "Vizyonumuz",
+  "aboutDescriptionThree": "We Codez olarak, sektörde önde gelen bir yazılım firması olmayı hedefliyoruz. Müşterilerimize sunduğumuz SEO uyumlu ve responsive tasarımlarımız ile onların dijital varlıklarını güçlendirirken, aynı zamanda teknolojiyi en iyi şekilde kullanarak sürdürülebilir ve yenilikçi çözümler üretiyoruz. Müşterilerimizin başarıları bizim için önceliklidir ve her projede en iyi hizmeti sunarak onların memnuniyetini ve güvenini kazanmayı amaçlıyoruz.",
+  "aboutTitleFour": "İletişim",
+  
   "footerTitle": "Kampanyalarımızdan haberdar olun!",
   "footerDescription": "Kampanyalarımızdan haberdar olarak en son indirimlerden ve fırsatlardan yararlanabilirsiniz. E-posta adresinizi girerek bültenimize abone olun.",
   "footerLOH": "Services",
