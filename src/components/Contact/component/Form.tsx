@@ -6,7 +6,7 @@ import Button from "@/components/ui/Button";
 import { useLanguage } from "@/components/lang/LanguageContext";
 import { useEffect, useState } from "react";
 import FormSkeleton from "./FormSkeleton";
-
+import axios from "axios";
 type Inputs = {
   name: string;
   email: string;
@@ -59,6 +59,16 @@ export default function Form() {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
+    axios
+      .post("http://localhost:8000/send-email", data)
+      .then((res) => {
+        console.log(res);
+        console.log("Message sent successfully!");
+      })
+      .catch((err) => {
+        console.error(err);
+      })
+      .finally(() => {});
   };
 
   return (
