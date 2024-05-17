@@ -35,7 +35,7 @@ export default async function handler(
         (error: string) => {
           if (error) {
             console.log(error);
-            res.status(500).json({ message: "Error sending email" });
+            res.status(500).json({ message: "Error sending email" + error});
           } else {
             res.status(200).json({ message: "Email sent successfully!" });
           }
