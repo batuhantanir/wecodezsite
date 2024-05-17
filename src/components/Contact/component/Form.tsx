@@ -62,11 +62,10 @@ export default function Form() {
     axios
       .post("api/mail", data)
       .then((res) => {
-        console.log(res);
-        console.log("Message sent successfully!");
+        
       })
       .catch((err) => {
-        console.error(err);
+
       })
       .finally(() => {});
   };
