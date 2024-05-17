@@ -11,7 +11,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   if (req.method === "POST") {
-    const { name, mail, subject, text } = req.body;
+    const { name, email, subject, message } = req.body;
 
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
@@ -27,7 +27,7 @@ export default async function handler(
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
       subject: subject,
-      text: `Name: ${name} \nEmail: ${mail} \nMessage: ${text}`,
+      text: `Name: ${name} \nEmail: ${email} \nMessage: ${message}`,
     };
 
     try {
