@@ -9,9 +9,9 @@ import { LanguageProvider } from "@/components/lang/LanguageContext";
 const inter = Rubik({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "WeCodez",
+  title: "we codez",
   description:
-    "WeCodez, geliştirici ve tasarımcılardan oluşan bir şirkettir. web ve mobil uygulamalar geliştirir.",
+    "we codez, geliştirici ve tasarımcılardan oluşan bir şirkettir. web ve mobil uygulamalar geliştirir.",
   icons: [
     {
       rel: "icon",
