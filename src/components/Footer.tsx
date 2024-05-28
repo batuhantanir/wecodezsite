@@ -8,7 +8,7 @@ import Link from "next/link";
 import FooterDescription from "./Home/FooterDescription";
 import { footerData } from "../utils/data/footerData";
 
-export function Footer() {
+const Footer = React.memo(() => {
   const { intl } = useLanguage();
   const groups = footerData.map((group) => {
     const links = group.links.map((link, index) => (
@@ -60,4 +60,6 @@ export function Footer() {
       </div>
     </footer>
   );
-}
+})
+
+export default Footer;
