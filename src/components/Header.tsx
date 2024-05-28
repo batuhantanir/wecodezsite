@@ -10,7 +10,7 @@ import ThemeSwitch from "./Theme/ThemeSwitch";
 import LangSwitch from "@/components/lang/LangSwitch";
 import { useLanguage } from "./lang/LanguageContext";
 
-const HeaderNav = React.memo(()=>{
+const HeaderNavComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery(769);
   const pathname = usePathname();
@@ -159,7 +159,7 @@ const HeaderNav = React.memo(()=>{
                           className={cn(
                             "flex items-center justify-between w-full p-5 rounded-xl bg-neutral-200 dark:bg-neutral-950 font-medium text-neutral-950 dark:text-white",
                             pathname !== item.href &&
-                              "opacity-[.80] hover:opacity-100 transition-opacity duration-300"
+                            "opacity-[.80] hover:opacity-100 transition-opacity duration-300"
                           )}
                           href={item.href}
                         >
@@ -222,6 +222,9 @@ const HeaderNav = React.memo(()=>{
       )}
     </>
   );
-})
+}
+
+const HeaderNav = React.memo(HeaderNavComponent);
+HeaderNav.displayName = 'HeaderNav';
 
 export default HeaderNav;

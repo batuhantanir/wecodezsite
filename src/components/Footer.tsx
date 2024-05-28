@@ -3,12 +3,11 @@ import React from "react";
 import { BackgroundBeams } from "./ui/background-beams";
 import { useLanguage } from "./lang/LanguageContext";
 import { FaPaperPlane } from "react-icons/fa";
-import { FaLinkedin, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import FooterDescription from "./Home/FooterDescription";
 import { footerData } from "../utils/data/footerData";
 
-const Footer = React.memo(() => {
+const FooterComponent = () => {
   const { intl } = useLanguage();
   const groups = footerData.map((group) => {
     const links = group.links.map((link, index) => (
@@ -60,6 +59,9 @@ const Footer = React.memo(() => {
       </div>
     </footer>
   );
-})
+}
+
+const Footer = React.memo(FooterComponent);
+Footer.displayName = 'Footer';
 
 export default Footer;
