@@ -10,7 +10,7 @@ import ThemeSwitch from "./Theme/ThemeSwitch";
 import LangSwitch from "@/components/lang/LangSwitch";
 import { useLanguage } from "./lang/LanguageContext";
 
-function HeaderNav() {
+const HeaderNav = React.memo(()=>{
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery(769);
   const pathname = usePathname();
@@ -222,6 +222,6 @@ function HeaderNav() {
       )}
     </>
   );
-}
+})
 
 export default HeaderNav;
