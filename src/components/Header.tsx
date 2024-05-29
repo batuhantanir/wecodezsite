@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 import ThemeSwitch from "./Theme/ThemeSwitch";
 import { useLocale, useTranslations } from "next-intl";
 
-function HeaderNav() {
+const HeaderNavComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery(769);
   const pathname = usePathname();
@@ -222,6 +222,9 @@ function HeaderNav() {
       )}
     </>
   );
-}
+};
+
+const HeaderNav = React.memo(HeaderNavComponent);
+HeaderNav.displayName = "HeaderNav";
 
 export default HeaderNav;

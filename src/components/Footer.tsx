@@ -7,7 +7,7 @@ import Link from "next/link";
 import FooterDescription from "./Home/FooterDescription";
 import { useTranslations } from "next-intl";
 
-export function Footer() {
+const FooterComponent = () => {
   const t = useTranslations("footer");
 
   const footerData = [
@@ -88,3 +88,8 @@ export function Footer() {
     </footer>
   );
 }
+
+const Footer = React.memo(FooterComponent);
+Footer.displayName = 'Footer';
+
+export default Footer;
