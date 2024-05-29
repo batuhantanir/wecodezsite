@@ -4,9 +4,10 @@ import "./globals.css";
 import ThemeProvider from "@/components/Theme/ThemeProvider";
 import HeaderNav from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { LanguageProvider } from "@/components/lang/LanguageContext";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 
-const inter = Rubik({ subsets: ["latin"] });
+const rubik = Rubik({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "we codez",
@@ -33,27 +34,33 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params: { locale },
+}: {
   children: React.ReactNode;
-}>) {
+  params: { locale: "tr" | "en" };
+}) {
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
+
   return (
-    <html lang="en">
-      <body className={`${inter.className} relative overflow-x-hidden`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-          className="bg-white dark:bg-slate-950 text-black dark:text-white w-full min-h-screen relative  overflow-x-hidden "
-        >
-          <LanguageProvider>
+    <html lang={locale}>
+      <body className={`${rubik.className}`}>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+            className="bg-white dark:bg-slate-950 text-black dark:text-white w-full min-h-screen relative  overflow-x-hidden "
+          >
             <HeaderNav />
             <main className="min-h-[calc(100vh_-_400px)]">{children}</main>
             <Footer />
-          </LanguageProvider>
-        </ThemeProvider>
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

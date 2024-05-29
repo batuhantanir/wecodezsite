@@ -23,6 +23,8 @@ function Hambuger({
         className
       )}
       type="button"
+      name="hambuger menu button"
+      aria-label="hambuger menu button"
       onClick={() => {
         setIsOpen(!isOpen);
       }}

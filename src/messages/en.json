@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+
+  "heroComp": {
+    "titleOne": "Create & Innovate",
+    "titleTwo": "Elevate!",
+    "description": "We build beautiful products with the latest technologies and frameworks. We are a team of passionate developers and designers that love to build amazing products."
+  },
+
+  "languageOne": "English",
+  "languageTwo": "Turkish",
+
+  "contact": {
+    "title": "Contact Us",
+    "description": "We are always here to help you. If you have any questions or need help, feel free to contact us.",
+    "subject": "Subject",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "button": "Submit",
+    "subjectPH": "Services, Projects, Support...",
+    "namePH": "John",
+    "emailPH": "info@wecodez.com",
+    "messagePH": "I would like to receive information about your services..."
+  },
+
+  "card": {
+    "button": "Learn More",
+    "cardOne": {
+      "title": "Web Development",
+      "description": "We build beautiful and responsive websites with the latest technologies and frameworks."
+    },
+    "cardTwo": {
+      "title": "Mobile Development",
+      "description": "We build amazing mobile applications with the latest technologies and frameworks."
+    },
+    "cardThree": {
+      "title": "Backend Development",
+      "description": "We build scalable and secure backend systems with the latest technologies and frameworks."
+    }
+  },
+
+  "comments": {
+    "commentOne": {
+      "quote": "Working with Wecodez was truly a wonderful experience. The services they provided for both web and mobile applications were excellent. The professionalism of the team and their communication were commendable.",
+      "author": "Ayşe K.",
+      "title": "A Wonderful Experience"
+    },
+    "commentTwo": {
+      "quote": "Wecodez's expertise in backend development is undeniable. By providing solutions during the construction of our project's infrastructure, we were able to save time and resources. I highly recommend them!",
+      "author": "Mehmet T.",
+      "title": "Expertise and Solutions"
+    },
+    "commentThree": {
+      "quote": "I have complete trust in Wecodez when it comes to website development. With their aesthetic and user-experience-focused approach, they executed our project perfectly. Thank you!",
+      "author": "Zeynep Y.",
+      "title": "Trust and Quality"
+    },
+    "commentFour": {
+      "quote": "We were amazed by the Wecodez team's work in mobile application development. They delivered our project quickly and with high quality. They will definitely be our preference for future projects.",
+      "author": "Ali R.",
+      "title": "Speed and Quality"
+    },
+    "commentFive": {
+      "quote": "Wecodez is a truly knowledgeable team. They supported us at every stage of our project, and we were extremely satisfied with the results. Wishing them continued success in their work!",
+      "author": "Deniz A.",
+      "title": "Professionalism and Support"
+    }
+  },
+
+  "about": {
+    "sectionOne": {
+      "title": "Who We Are",
+      "description": "Wecodez is a software company specialized in web, mobile and backend development. It has set out with the mission to strengthen its digital products and services by providing innovative solutions to its customers. Its team consists of experienced and talented software engineers and aims to keep customer satisfaction at the highest level by producing solutions specific to each project."
+    },
+    "sectionTwo": {
+      "title": "Our Mission",
+      "description": "Our mission is to provide the best service to our customers. We aim to produce beautiful and functional products that will help you achieve your goals. We are here to help you with your projects. By collaborating, we offer the best solutions to bring your projects to life. The satisfaction and success of our customers is paramount to us."
+    },
+    "sectionThree": {
+      "title": "Our Vision",
+      "description": "As We Codez, we aim to be a leading software company in the sector. While strengthening their digital presence with our SEO compatible and responsive designs we offer to our customers, we also produce sustainable and innovative solutions by using technology in the best way. The success of our customers is our priority and we aim to gain their satisfaction and trust by providing the best service in every project."
+    },
+    "sectionFour": {
+      "title": "Contact"
+    }
+  },
+
+  "footer": {
+    "title": "Be informed about our campaigns!",
+    "description": "Stay up to date with our campaigns and take advantage of the latest discounts and deals. Subscribe to our newsletter by entering your e-mail address.",
+    "firstList": {
+      "title": "Services",
+      "linkOne": "Web Development",
+      "linkTwo": "Mobile Development",
+      "linkThree": "Backend Development"
+    },
+    "secondList": {
+      "title": "About Us",
+      "linkOne": "Our Team",
+      "linkTwo": "Our Projects",
+      "linkThree": "Our Blog"
+    },
+    "thirdList": {
+      "title": "Contact",
+      "linkOne": "customer service"
+    }
+  }
+}

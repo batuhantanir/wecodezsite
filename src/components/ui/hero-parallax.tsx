@@ -9,7 +9,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useLanguage } from "../lang/LanguageContext";
+import { useTranslations } from "next-intl";
 
 export const HeroParallax = ({
   products,
@@ -93,15 +93,13 @@ export const HeroParallax = ({
 };
 
 export const Header = () => {
-  const { intl } = useLanguage();
+  const t = useTranslations("heroComp");
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold ">
-        {intl.headerTitleOne} <br /> {intl.headerTitleTwo}
+        {t("titleOne")} <br /> {t("titleTwo")}
       </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 ">
-        {intl.headerDescription}
-      </p>
+      <p className="max-w-2xl text-base md:text-xl mt-8 ">{t("description")}</p>
     </div>
   );
 };

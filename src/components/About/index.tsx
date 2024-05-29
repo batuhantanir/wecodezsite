@@ -2,19 +2,20 @@
 import React, { useEffect, useState } from "react";
 import { Tooltip } from "./component/ToolTip";
 import Skeleton from "./component/AboutSkeleton";
-import { useLanguage } from "../lang/LanguageContext";
 import { IoMdMailOpen } from "react-icons/io";
 import { FaWhatsapp, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
 import Link from "next/link";
 import AboutAnimation from "./component/AboutAnimation";
+import { useTranslations } from "next-intl";
+
 function About() {
   const [loading, setLoading] = useState(true);
+  const t = useTranslations("about");
 
   useEffect(() => {
     setLoading(false);
   }, []);
 
-  const { intl } = useLanguage();
   return (
     <>
       {loading ? (
@@ -26,31 +27,32 @@ function About() {
               <AboutAnimation>
                 <div className="space-y-3">
                   <h2 className="font-medium dark:text-neutral-400  text-zinc-800 text-xl">
-                    {intl.aboutTitle}
+                    {t("sectionOne.title")}
                   </h2>
-                  <p className="ml-2">{intl.aboutDescription}</p>
+                  <p className="ml-2">{t("sectionOne.description")}</p>
                 </div>
               </AboutAnimation>
               <AboutAnimation>
                 <div className="space-y-3">
                   <h2 className="font-medium text-xl dark:text-neutral-400  text-zinc-800 pt-10">
-                    {intl.aboutTitleTwo}
+                    {t("sectionTwo.title")}
                   </h2>
-                  <p className="ml-2">{intl.aboutDescriptionTwo}</p>
+                  <p className="ml-2">{t("sectionTwo.description")}</p>
                 </div>
               </AboutAnimation>
               <AboutAnimation>
                 <div className="space-y-3">
                   <h2 className="font-medium text-xl dark:text-neutral-400  text-zinc-800 pt-10">
-                    {intl.aboutTitleThree}
+                    {t("sectionThree.title")}
                   </h2>
-                  <p className="ml-2">{intl.aboutDescriptionThree}</p>
+                  <p className="ml-2">{t("sectionThree.description")}</p>
                 </div>
               </AboutAnimation>
               <AboutAnimation>
                 <div className="space-y-4">
                   <h2 className="font-medium text-xl dark:text-neutral-400  text-zinc-800 pt-10">
-                    {intl.aboutTitleFour}
+                    {t("sectionFour.title")}
+
                   </h2>
                   <div className="ml-2 flex flex-col md:flex-row gap-4 md:gap-14">
                     <div className="flex flex-col gap-4">
@@ -71,11 +73,11 @@ function About() {
                     </div>
                     <div className="flex flex-col gap-4">
                       <Link
-                        href="mailto:info@wecodez.com"
+                        href="mailto:batuhan.tanir00@gmail.com"
                         className="flex gap-4 items-center"
                       >
                         <IoMdMailOpen size={20} className="text-zinc-600" />
-                        <span>info@wecodez.com</span>
+                        <span>batuhan.tanir00@gmail.com</span>
                       </Link>
                       <Link
                         href="https://www.linkedin.com/company/102354830/admin/feed/posts/"

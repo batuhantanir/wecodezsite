@@ -1,15 +1,42 @@
 "use client";
 import React from "react";
 import { BackgroundBeams } from "./ui/background-beams";
-import { useLanguage } from "./lang/LanguageContext";
 import { FaPaperPlane } from "react-icons/fa";
 import { FaLinkedin, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import FooterDescription from "./Home/FooterDescription";
-import { footerData } from "../utils/data/footerData";
+import { useTranslations } from "next-intl";
 
 export function Footer() {
-  const { intl } = useLanguage();
+  const t = useTranslations("footer");
+
+  const footerData = [
+    {
+      title: t("firstList.title"),
+      links: [
+        { label: t("firstList.linkOne"), link: "/" },
+        { label: t("firstList.linkTwo"), link: "/" },
+        { label: t("firstList.linkThree"), link: "/" },
+      ],
+    },
+    {
+      title: t("secondList.title"),
+      links: [
+        { label: t("secondList.linkOne"), link: "/" },
+        { label: t("secondList.linkTwo"), link: "/" },
+        { label: t("secondList.linkThree"), link: "/" },
+      ],
+    },
+    {
+      title: t("thirdList.title"),
+      links: [
+        { label: t("thirdList.linkOne"), link: "tel:+905362621566" },
+        { label: "WhatsApp", link: "https://wa.me/+905362621566" },
+        { label: "Instagram", link: "https://www.instagram.com/wecodez" },
+      ],
+    },
+  ];
+
   const groups = footerData.map((group) => {
     const links = group.links.map((link, index) => (
       <Link key={index} href={link.link} className="hover:underline">
@@ -34,10 +61,10 @@ export function Footer() {
           <div className="w-full flex flex-col lg:flex-row items-start gap-10 justify-between container mx-auto">
             <div className="max-w-lg p-4 ">
               <h1 className="relative z-10 text-sm md:text-2xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  font-sans font-bold">
-                {intl.footerTitle}
+                {t("title")}
               </h1>
               <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm relative z-10">
-                {intl.footerDescription}
+                {t("description")}
               </p>
               <div className="flex gap-2 ">
                 <input

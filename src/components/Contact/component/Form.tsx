@@ -3,10 +3,10 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
 import Button from "@/components/ui/Button";
-import { useLanguage } from "@/components/lang/LanguageContext";
 import { useEffect, useState } from "react";
 import FormSkeleton from "./FormSkeleton";
 import axios from "axios";
+import { useTranslations } from "next-intl";
 type Inputs = {
   name: string;
   email: string;
@@ -16,7 +16,7 @@ type Inputs = {
 
 export default function Form() {
   const [isLoading, setIsLoading] = useState(true);
-  const { intl } = useLanguage();
+  const t = useTranslations("contact");
 
   const schema = z.object({
     name: z
@@ -61,12 +61,8 @@ export default function Form() {
     console.log(data);
     axios
       .post("api/mail", data)
-      .then((res) => {
-        
-      })
-      .catch((err) => {
-
-      })
+      .then((res) => {})
+      .catch((err) => {})
       .finally(() => {});
   };
 
@@ -75,20 +71,20 @@ export default function Form() {
       {!isLoading ? (
         <>
           <h2 className="font-bold text-xl text-violet-300 dark:text-neutral-400">
-            {intl.contactTitle}
+            {t("title")}
           </h2>
           <p className="text-zinc-300 text-sm max-w-sm mt-2 dark:text-neutral-300">
-            {intl.contactDescription}
+            {t("description")}
           </p>
           <form
             className="flex flex-col gap-4"
             onSubmit={handleSubmit(onSubmit)}
           >
             <label className="flex flex-col text-violet-200 dark:text-white gap-2">
-              {intl.contactName}
+              {t("name")}
               <input
                 className=" text-black dark:text-white bg-gray-50 dark:bg-zinc-800 py-2 px-4 rounded-md"
-                placeholder={intl.contactNamePH}
+                placeholder={t("namePH")}
                 {...register("name")}
               />
               {errors.name && (
@@ -97,10 +93,10 @@ export default function Form() {
             </label>
 
             <label className="flex flex-col gap-2 text-violet-200 dark:text-white">
-              {intl.contactEmail}
+              {t("email")}
               <input
                 className=" text-black dark:text-white bg-white dark:bg-zinc-800 p-2 px-4 rounded-md"
-                placeholder={intl.contactEmailPH}
+                placeholder={t("emailPH")}
                 {...register("email")}
               />
               {errors.email && (
@@ -109,9 +105,9 @@ export default function Form() {
             </label>
 
             <label className="flex flex-col gap-2 text-violet-200 dark:text-white">
-              {intl.contactSubject}
+              {t("subject")}
               <input
-                placeholder={intl.contactSubjectPH}
+                placeholder={t("subjectPH")}
                 className=" text-black dark:text-white bg-gray-50 dark:bg-zinc-800 p-2 px-4 rounded-md"
                 {...register("subject")}
               />
@@ -120,10 +116,10 @@ export default function Form() {
               )}
             </label>
             <label className="flex flex-col gap-2 text-violet-200 dark:text-white">
-              {intl.contactMessage}
+              {t("message")}
               <textarea
                 className=" text-black dark:text-white bg-gray-50 dark:bg-zinc-800 p-2 px-4 rounded-md resize-none"
-                placeholder={intl.contactMessagePH}
+                placeholder={t("messagePH")}
                 maxLength={500}
                 rows={10}
                 {...register("message")}
@@ -134,7 +130,7 @@ export default function Form() {
             </label>
             <div className="flex pt-2 items-center justify-center">
               <Button className="w-fit px-10" type="submit">
-                {intl.contactButton}
+                {t("button")}
               </Button>
             </div>
           </form>

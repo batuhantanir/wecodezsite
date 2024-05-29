@@ -1,24 +1,25 @@
 "use client";
-import { useLanguage } from "../lang/LanguageContext";
+import { useTranslations } from "next-intl";
 import { HoverEffect } from "../ui/card-hover-effect";
 import { TbWorldCode, TbDeviceMobileCode, TbShieldCode } from "react-icons/tb";
 
 export function CardHoverEffect() {
-  const { intl } = useLanguage();
+  const t = useTranslations("card");
+
   const projects = [
     {
-      title: intl.cardTitleOne,
-      description: intl.cardDescriptionOne,
+      title: t("cardOne.title"),
+      description: t("cardOne.description"),
       icon: TbWorldCode,
     },
     {
-      title: intl.cardTitleTwo,
-      description: intl.cardDescriptionTwo,
+      title: t("cardTwo.title"),
+      description: t("cardTwo.description"),
       icon: TbDeviceMobileCode,
     },
     {
-      title: intl.cardTitleThree,
-      description: intl.cardDescriptionThree,
+      title: t("cardThree.title"),
+      description: t("cardThree.description"),
       icon: TbShieldCode,
     },
   ];

@@ -7,27 +7,27 @@ import { useMediaQuery } from "@/utils/useMediaQuery";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeSwitch from "./Theme/ThemeSwitch";
-import LangSwitch from "@/components/lang/LangSwitch";
-import { useLanguage } from "./lang/LanguageContext";
+import { useLocale, useTranslations } from "next-intl";
 
 function HeaderNav() {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery(769);
   const pathname = usePathname();
-  const { intl } = useLanguage();
+  const t = useTranslations("nav");
+  const locale = useLocale();
 
   const navItems = [
     {
-      title: intl.navbarHome,
-      href: "/",
+      title: t("home"),
+      href: `/${locale}`,
     },
     {
-      title: intl.navbarAbout,
-      href: "/about",
+      title: t("about"),
+      href: `/${locale}/about`,
     },
     {
-      title: intl.navbarContact,
-      href: "/contact",
+      title: t("contact"),
+      href: `/${locale}/contact`,
     },
   ];
 
@@ -103,7 +103,7 @@ function HeaderNav() {
                   </Link>
                 ))}
                 <div className="ml-5 flex gap-4 w-fit">
-                  <LangSwitch />
+                  {/* <LangSwitch /> */}
                   <ThemeSwitch />
                 </div>
               </motion.nav>
@@ -188,7 +188,7 @@ function HeaderNav() {
                     }}
                     className="ml-5 flex gap-4 w-fit"
                   >
-                    <LangSwitch />
+                    {/* <LangSwitch /> */}
                     <ThemeSwitch />
                   </motion.div>
                 </nav>

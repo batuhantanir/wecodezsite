@@ -1,38 +1,39 @@
 "use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
-import { useLanguage } from "../lang/LanguageContext";
+import { useTranslations } from "next-intl";
 
 export function InfiniteMovingCard() {
-  const { intl } = useLanguage();
+  const t = useTranslations("comments");
+
   const testimonials = [
     {
-      quote: intl.commentOneQuote,
-      name: intl.commentOneAuthor,
-      title: intl.commentOneTitle,
+      quote: t("commentOne.quote"),
+      name: t("commentOne.author"),
+      title: t("commentOne.title"),
     },
     {
-      quote: intl.commentTwoQuote,
-      name: intl.commentTwoAuthor,
-      title: intl.commentTwoTitle,
+      quote: t("commentTwo.quote"),
+      name: t("commentTwo.author"),
+      title: t("commentTwo.title"),
     },
     {
-      quote: intl.commentThreeQuote,
-      name: intl.commentThreeAuthor,
-      title: intl.commentThreeTitle,
+      quote: t("commentThree.quote"),
+      name: t("commentThree.author"),
+      title: t("commentThree.title"),
     },
     {
-      quote: intl.commentFourQuote,
-      name: intl.commentFourAuthor,
-      title: intl.commentFourTitle,
+      quote: t("commentFour.quote"),
+      name: t("commentFour.author"),
+      title: t("commentFour.title"),
     },
     {
-      quote: intl.commentFiveQuote,
-      name: intl.commentFiveAuthor,
-      title: intl.commentFiveTitle,
+      quote: t("commentFive.quote"),
+      name: t("commentFive.author"),
+      title: t("commentFive.title"),
     },
   ];
+
   if (testimonials[0].quote === "" || testimonials[0].quote === undefined)
     return null;
 

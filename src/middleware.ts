@@ -1,37 +1,14 @@
-import { NextRequest, NextResponse } from "next/server";
-
-const locales = ["en", "tr"];
-let defaultLocale = "en";
-
-export function middleware(request: NextRequest) {
-  const country = request.geo?.country?.toLowerCase() || "en";
-  request.cookies.get("NEXT_LOCALE")?.value || defaultLocale;
-
-  if (locales.includes(country) && !request.cookies.get("NEXT_LOCALE")?.value) {
-    defaultLocale = country;
-  }
-
-  const requestHeaders = new Headers(request.headers);
-  const response = NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  });
-
-  const cookieLocale =
-    request.cookies.get("NEXT_LOCALE")?.value || defaultLocale;
-  // Full locale (e.g. `en-US`)
-  // response.headers.set('x-locale', locale);
-
-  // Set header to simulate correct response for `next-intl`
-  // response.headers.set('X-NEXT-INTL-LOCALE', localeShort);
-
-  // Set cookie to simulate correct response for `next-intl`
-  response.cookies.set("NEXT_LOCALE", cookieLocale);
-
-  return response;
-}
-
+import createMiddleware from 'next-intl/middleware';
+ 
+export default createMiddleware({
+  // A list of all locales that are supported
+  locales: ['en', 'tr'],
+ 
+  // Used when no locale matches
+  defaultLocale: 'en'
+});
+ 
 export const config = {
-  matcher: ["/:path*"],
+  // Match only internationalized pathnames
+  matcher: ['/', '/(tr|en)/:path*']
 };

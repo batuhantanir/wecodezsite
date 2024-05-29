@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "home": "Anasayfa",
+    "about": "Hakkımızda",
+    "contact": "İletişim"
+  },
+
+  "heroComp": {
+    "titleOne": "Yeniliği oluştur,",
+    "titleTwo": "Yükselt!",
+    "description": "En son teknolojiler ve çerçevelerle güzel ürünler üretiyoruz. Harika ürünler üretmeyi seven tutkulu geliştiricilerden ve tasarımcılardan oluşan bir ekibiz."
+  },
+
+  "languageOne": "İngilizce",
+  "languageTwo": "Türkçe",
+
+  "contact": {
+    "title": "Bize ulaşın",
+    "description": "Size yardım etmek için daima buradayız. Herhangi bir sorunuz varsa bizimle iletişime geçebilirsiniz.",
+    "subject": "Konu",
+    "name": "İsim",
+    "email": "E-posta",
+    "message": "Mesajınız",
+    "button": "Gönder",
+    "subjectPH": "Hizmetler, Destek, İşbirliği...",
+    "namePH": "Batuhan",
+    "emailPH": "info@wecodez.com",
+    "messagePH": "Hizmetleriniz hakkında bilgi almak istiyorum..."
+  },
+
+  "card": {
+    "button": "Daha fazla bilgi",
+    "cardOne": {
+      "title": "Web Geliştirme",
+      "description": "En son teknolojiler ve çerçevelerle modern ve duyarlı web siteleri oluşturuyoruz."
+    },
+    "cardTwo": {
+      "title": "Mobile Geliştirme",
+      "description": "Mobil uygulamalarınızı en son teknolojilerle oluşturuyoruz. Hem iOS hem de Android platformları için destek sunuyoruz."
+    },
+    "cardThree": {
+      "title": "Backend Geliştirme",
+      "description": "Güçlü ve ölçeklenebilir backend hizmetleri sunuyoruz. Hem bulut tabanlı hem de yerel sunucular için destek sunuyoruz."
+    }
+  },
+
+  "comments": {
+    "commentOne": {
+      "quote": "Wecodez ile çalışmak gerçekten harika bir deneyimdi. Hem web hem de mobil uygulamalar için sundukları hizmetler mükemmeldi. Ekibin profesyonelliği ve iletişimleri takdire şayandı.",
+      "author": "Ayşe K.",
+      "title": "Harika bir deneyim"
+    },
+    "commentTwo": {
+      "quote": "Backend geliştirmede Wecodez'in uzmanlığı tartışılmaz. Projemizin altyapısını oluştururken sundukları çözümler sayesinde zaman ve kaynak tasarrufu sağladık. Kesinlikle tavsiye ederim!",
+      "author": "Mehmet T.",
+      "title": "Uzmanlık ve Çözümler"
+    },
+    "commentThree": {
+      "quote": "Web sitesi geliştirme konusunda Wecodez'e güvenim tam. Estetik ve kullanıcı deneyimi odaklı yaklaşımlarıyla projemizi mükemmel bir şekilde hayata geçirdiler. Teşekkürler!",
+      "author": "Zeynep Y.",
+      "title": "Güven ve Kalite"
+    },
+    "commentFour": {
+      "quote": "Mobil uygulama geliştirme konusunda Wecodez ekibine hayran kaldık. Hem hızlı hem de kaliteli bir şekilde projemizi teslim ettiler. İlerleyen işlerimizde de tercihimiz olacaklar.",
+      "author": "Ali R.",
+      "title": "Hız ve Kalite"
+    },
+    "commentFive": {
+      "quote": "Wecodez, işini gerçekten bilen bir ekip. Projemizin her aşamasında bize destek oldular ve sonuçtan son derece memnun kaldık. İşlerinde başarılarının devamını dilerim!",
+      "author": "Deniz A.",
+      "title": "Profesyonellik ve Destek"
+    }
+  },
+
+  "about": {
+    "sectionOne": {
+      "title": "Biz Kimiz",
+      "description": "Wecodez, web, mobil ve backend geliştirme alanında uzmanlaşmış bir yazılım şirketidir. Müşterilerine yenilikçi çözümler sunarak dijital ürünlerini ve hizmetlerini güçlendirme misyonuyla yola çıkmıştır. Ekibi, tecrübeli ve yetenekli yazılım mühendislerinden oluşmakta olup, her projeye özgü çözümler üreterek müşteri memnuniyetini en üst seviyede tutmayı hedeflemektedir."
+    },
+    "sectionTwo": {
+      "title": "Misyonumuz",
+      "description": "Misyonumuz müşterilerimize en iyi hizmeti sunmaktır. Hedeflerinize ulaşmanıza yardımcı olacak güzel ve işlevsel ürünler üretmeyi amaçlıyoruz. Projelerinizde size yardımcı olmak için buradayız. İşbirliği yaparak, projelerinizi hayata geçirmek için en iyi çözümleri sunuyoruz. Müşterilerimizin memnuniyeti ve başarısı bizim için her şeyden önemlidir."
+    },
+    "sectionThree": {
+      "title": "Vizyonumuz",
+      "description": "We Codez olarak, sektörde önde gelen bir yazılım firması olmayı hedefliyoruz. Müşterilerimize sunduğumuz SEO uyumlu ve responsive tasarımlarımız ile onların dijital varlıklarını güçlendirirken, aynı zamanda teknolojiyi en iyi şekilde kullanarak sürdürülebilir ve yenilikçi çözümler üretiyoruz. Müşterilerimizin başarıları bizim için önceliklidir ve her projede en iyi hizmeti sunarak onların memnuniyetini ve güvenini kazanmayı amaçlıyoruz."
+    },
+    "sectionFour": {
+      "title": "İletişim"
+    }
+  },
+
+  "footer": {
+    "title": "Kampanyalarımızdan haberdar olun!",
+    "description": "Kampanyalarımızdan haberdar olarak en son indirimlerden ve fırsatlardan yararlanabilirsiniz. E-posta adresinizi girerek bültenimize abone olun.",
+    "firstList": {
+      "title": "Hizmetlerimiz",
+      "linkOne": "Web Development",
+      "linkTwo": "Mobile Development",
+      "linkThree": "Backend Development"
+    },
+    "secondList": {
+      "title": "Hakkımızda",
+      "linkOne": "Takımımız",
+      "linkTwo": "Referanslarımız",
+      "linkThree": "Blog"
+    },
+    "thirdList": {
+      "title": "İletişim",
+      "linkOne": "Müşteri Hizmetleri"
+    }
+  }
+}

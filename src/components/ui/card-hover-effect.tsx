@@ -3,9 +3,9 @@ import { cn } from "@/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { IconType } from "react-icons";
-import { useLanguage } from "../lang/LanguageContext";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
+import { useTranslations } from "next-intl";
 
 export const HoverEffect = ({
   items,
@@ -19,7 +19,8 @@ export const HoverEffect = ({
   className?: string;
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const { intl } = useLanguage();
+
+  const t = useTranslations("card");
   return (
     <div
       className={cn(
@@ -63,7 +64,7 @@ export const HoverEffect = ({
                 letterSpacing: "0.05em",
               }}
             >
-              {intl.cardButton} <FaArrowRight className="-rotate-45" />
+              {t("button")} <FaArrowRight className="-rotate-45" />
             </Link>
           </Card>
         </div>

@@ -1,10 +1,14 @@
 import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
+  const isTurkish =
+    typeof navigator !== "undefined" && navigator.language === "tr";
+
   return {
     name: "we codez",
-    description:
-      "WeCodez, geliştirici ve tasarımcılardan oluşan bir şirkettir. web ve mobil uygulamalar geliştirir.",
+    description: isTurkish
+      ? "We codez, geliştirici ve tasarımcılardan oluşan bir şirkettir. web ve mobil uygulamalar geliştirir."
+      : "We codez is a company of developers and designers. It develops web and mobile applications.",
     short_name: "we codez",
     start_url: "/",
     display: "standalone",
