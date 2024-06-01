@@ -11,6 +11,7 @@ export default function manifest(): MetadataRoute.Manifest {
       : "We codez is a company of developers and designers. It develops web and mobile applications.",
     short_name: "we codez",
     start_url: "/",
+    lang: isTurkish ? "tr" : "en",
     display: "standalone",
     background_color: "#0A0A0A",
     theme_color: "#0A0A0A",
