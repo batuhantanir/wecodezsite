@@ -73,8 +73,12 @@ const FooterComponent = () => {
                   placeholder="info@wecodez.com"
                   className="rounded-lg hover:border-neutral-600 border border-neutral-800 text-white ring-0 outline-none w-full relative z-10  bg-neutral-950 placeholder:text-neutral-700 transition-colors duration-200 p-2"
                 />
-                <button className="px-3 rounded-lg bg-gradient-to-b from-neutral-600 to-neutral-400 flex w-fit z-10 cursor-pointer items-center justify-center" name="submit">
+                <button
+                  className="px-3 rounded-lg bg-gradient-to-b from-neutral-600 to-neutral-400 flex w-fit z-10 cursor-pointer items-center justify-center"
+                  name="submit"
+                >
                   <FaPaperPlane />
+                  <span className="sr-only">{t("submit")}</span>
                 </button>
               </div>
             </div>

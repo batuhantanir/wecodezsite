@@ -11,6 +11,7 @@ function FooterDescription() {
         </p>
         <div className="flex gap-5 z-10">
           <Link href="https://wa.me/+905462737734">
+            <span className="sr-only">whatsapp</span>
             <FaWhatsapp
               name="whatsapp"
               className="text-neutral-300 hover:scale-125 active:scale-125 transition-all duration-200"
@@ -18,6 +19,7 @@ function FooterDescription() {
             />
           </Link>
           <Link href="https://www.linkedin.com/company/we-codez/">
+            <span className="sr-only">linkedin</span>
             <FaLinkedin
               name="linkedin"
               className="text-neutral-300 hover:scale-125 active:scale-125 transition-all duration-200"
@@ -25,6 +27,7 @@ function FooterDescription() {
             />
           </Link>
           <Link href="https://www.instagram.com/wecodez/">
+            <span className="sr-only">instagram</span>
             <FaInstagram
               name="instagram"
               className="text-neutral-300 hover:scale-125 active:scale-125 transition-all duration-200"
