@@ -22,54 +22,57 @@ export const HoverEffect = ({
 
   const t = useTranslations("card");
   return (
-    <div
-      className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10      ",
-        className
-      )}
-    >
-      {items.map((item, idx) => (
-        <div
-          key={idx}
-          className="relative group  block p-3.5 h-full w-full"
-          onMouseEnter={() => setHoveredIndex(idx)}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
-          <AnimatePresence>
-            {hoveredIndex === idx && (
-              <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
-                layoutId="hoverBackground"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 0.15 },
+    <>
+      <h2 className="sr-only">{t("title")}</h2>
+      <div
+        className={cn(
+          "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
+          className
+        )}
+      >
+        {items.map((item, idx) => (
+          <div
+            key={idx}
+            className="relative group  block p-3.5 h-full w-full"
+            onMouseEnter={() => setHoveredIndex(idx)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <AnimatePresence>
+              {hoveredIndex === idx && (
+                <motion.span
+                  className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                  layoutId="hoverBackground"
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: 1,
+                    transition: { duration: 0.15 },
+                  }}
+                  exit={{
+                    opacity: 0,
+                    transition: { duration: 0.15, delay: 0.2 },
+                  }}
+                />
+              )}
+            </AnimatePresence>
+            <Card>
+              <CardTitle Icon={item.icon}>{item.title}</CardTitle>
+              <CardDescription>{item.description}</CardDescription>
+              <Link
+                href="/contact"
+                className=" flex gap-2 flex-ce items-center border border-zinc-300 hover:bg-zinc-200 text-zinc-300 hover:text-black w-fit rounded-lg px-2 py-0.5 transition-colors duration-200 ease-in-out"
+                style={{
+                  fontSize: "0.9rem",
+                  lineHeight: "1.5",
+                  letterSpacing: "0.05em",
                 }}
-                exit={{
-                  opacity: 0,
-                  transition: { duration: 0.15, delay: 0.2 },
-                }}
-              />
-            )}
-          </AnimatePresence>
-          <Card>
-            <CardTitle Icon={item.icon}>{item.title}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
-            <Link
-              href="/contact"
-              className=" flex gap-2 flex-ce items-center border border-zinc-300 hover:bg-zinc-200 text-zinc-300 hover:text-black w-fit rounded-lg px-2 py-0.5 transition-colors duration-200 ease-in-out"
-              style={{
-                fontSize: "0.9rem",
-                lineHeight: "1.5",
-                letterSpacing: "0.05em",
-              }}
-            >
-              {t("button")} <FaArrowRight className="-rotate-45" />
-            </Link>
-          </Card>
-        </div>
-      ))}
-    </div>
+              >
+                {t("button")} <FaArrowRight className="-rotate-45" />
+              </Link>
+            </Card>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
@@ -109,9 +112,9 @@ export const CardTitle = ({
       ) : (
         <div className=" min-w-7 size-8"></div>
       )}
-      <h4 className={cn("text-zinc-100 font-bold tracking-wide", className)}>
+      <h3 className={cn("text-zinc-100 font-bold tracking-wide", className)}>
         {children}
-      </h4>
+      </h3>
     </div>
   );
 };

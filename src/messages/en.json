@@ -30,6 +30,7 @@
 
   "card": {
     "button": "Learn More",
+    "title": "Our Services",
     "cardOne": {
       "title": "Web Development",
       "description": "We build beautiful and responsive websites with the latest technologies and frameworks."

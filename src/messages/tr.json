@@ -30,6 +30,7 @@
 
   "card": {
     "button": "Daha fazla bilgi",
+    "title": "Hizmetlerimiz",
     "cardOne": {
       "title": "Web Geliştirme",
       "description": "En son teknolojiler ve çerçevelerle modern ve duyarlı web siteleri oluşturuyoruz."

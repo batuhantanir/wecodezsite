@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { BackgroundBeams } from "./ui/background-beams";
 import { FaPaperPlane } from "react-icons/fa";
@@ -60,9 +59,11 @@ const FooterComponent = () => {
         <div className="w-full bg-neutral-950  py-20 md:py-16 md:flex items-center">
           <div className="w-full flex flex-col lg:flex-row items-start gap-10 justify-between container mx-auto">
             <div className="max-w-lg p-4 ">
-              <h1 className="relative z-10 text-sm md:text-2xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  font-sans font-bold">
+              <h1 className="sr-only">we codez</h1>
+              <h1 className="sr-only">wecodez</h1>
+              <h6 className="relative z-10 text-sm md:text-2xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  font-sans font-bold">
                 {t("title")}
-              </h1>
+              </h6>
               <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm relative z-10">
                 {t("description")}
               </p>
@@ -72,7 +73,7 @@ const FooterComponent = () => {
                   placeholder="info@wecodez.com"
                   className="rounded-lg hover:border-neutral-600 border border-neutral-800 text-white ring-0 outline-none w-full relative z-10  bg-neutral-950 placeholder:text-neutral-700 transition-colors duration-200 p-2"
                 />
-                <button className="px-3 rounded-lg bg-gradient-to-b from-neutral-600 to-neutral-400 flex w-fit z-10 cursor-pointer items-center justify-center">
+                <button className="px-3 rounded-lg bg-gradient-to-b from-neutral-600 to-neutral-400 flex w-fit z-10 cursor-pointer items-center justify-center" name="submit">
                   <FaPaperPlane />
                 </button>
               </div>
@@ -87,9 +88,9 @@ const FooterComponent = () => {
       </div>
     </footer>
   );
-}
+};
 
 const Footer = React.memo(FooterComponent);
-Footer.displayName = 'Footer';
+Footer.displayName = "Footer";
 
 export default Footer;
