@@ -8,8 +8,44 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeSwitch from "./Theme/ThemeSwitch";
 import { useLocale, useTranslations } from "next-intl";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@radix-ui/react-popover";
+import { IoLanguage } from "react-icons/io5";
 
-const HeaderNavComponent = () => {
+const LangSwitch = () => {
+  const pathname = usePathname();
+  return (
+    <Popover>
+      <PopoverTrigger
+        className="hover:dark:bg-white/20 p-1.5 hover:dark:text-white rounded-md"
+        name="translate"
+      >
+        <IoLanguage className="text-xl" />
+      </PopoverTrigger>
+      <PopoverContent className=" bg-purple-500 flex flex-row gap-3 dark:bg-[#121212] outline-none w-fit h-fit border-none dark:text-neutral-300 py-2 px-4 ">
+        <Link
+          className="text-lg font-medium"
+          locale="tr"
+          href={`/tr` + pathname?.substring(3, pathname.length)}
+        >
+          TR
+        </Link>
+        <Link
+          className="text-lg font-medium "
+          locale="en"
+          href={`/en` + pathname?.substring(3, pathname.length)}
+        >
+          EN
+        </Link>
+      </PopoverContent>
+    </Popover>
+  );
+};
+
+const HeaderNavComponent = ({}) => {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery(769);
   const pathname = usePathname();
@@ -103,13 +139,14 @@ const HeaderNavComponent = () => {
                   </Link>
                 ))}
                 <div className="ml-5 flex gap-4 w-fit">
-                  {/* <LangSwitch /> */}
+                  <LangSwitch />
                   <ThemeSwitch />
                 </div>
               </motion.nav>
             ) : (
               <>
                 <Hambuger isOpen={isOpen} setIsOpen={setIsOpen} />
+                <LangSwitch />
               </>
             )}
           </div>
@@ -188,7 +225,7 @@ const HeaderNavComponent = () => {
                     }}
                     className="ml-5 flex gap-4 w-fit"
                   >
-                    {/* <LangSwitch /> */}
+                    <LangSwitch />
                     <ThemeSwitch />
                   </motion.div>
                 </nav>
