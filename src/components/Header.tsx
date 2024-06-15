@@ -146,7 +146,6 @@ const HeaderNavComponent = ({}) => {
             ) : (
               <>
                 <Hambuger isOpen={isOpen} setIsOpen={setIsOpen} />
-                <LangSwitch />
               </>
             )}
           </div>
