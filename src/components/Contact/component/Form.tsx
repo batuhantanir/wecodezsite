@@ -60,7 +60,7 @@ export default function Form() {
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
     axios
-      .post("api/mail", data)
+      .post("/api/mail", data)
       .then((res) => {})
       .catch((err) => {})
       .finally(() => {});

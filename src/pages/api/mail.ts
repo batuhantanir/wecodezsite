@@ -18,14 +18,14 @@ export default async function handler(
       port: 587,
       secure: false,
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: process.env.SMTP_MAIL,
+        pass: process.env.SMTP_PASS,
       },
     });
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
+      from: process.env.SMTP_MAIL,
+      to: process.env.ADMIN_MAILS,
       subject: subject,
       text: `Name: ${name} \nEmail: ${email} \nMessage: ${message}`,
     };
